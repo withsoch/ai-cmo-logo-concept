@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pen, Mic, Human</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink:#16161d; --paper:#f6f4ef; --orange:#ff5c35; --muted:#6c6c76; --line:#e5e1d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1120px; margin:0 auto; padding:44px 20px 90px; }
+  a.back { font-size:.85rem; color:var(--muted); }
+  h1 { font-family:Manrope; font-weight:800; font-size:clamp(2rem,1.2rem + 3vw,3.2rem); letter-spacing:-.035em; margin:14px 0 10px; }
+  .lead { max-width:800px; color:#4a4a54; line-height:1.65; }
+
+  .opt { margin-top:44px; display:grid; grid-template-columns:1.1fr 1fr; gap:16px; }
+  @media (max-width:860px) { .opt { grid-template-columns:1fr; } }
+  .hero { background:#fff; border-radius:26px; box-shadow:inset 0 0 0 1px var(--line); min-height:330px; display:grid; place-items:center; position:relative; padding:24px; }
+  .hero .n { position:absolute; left:20px; top:16px; font-size:.72rem; font-weight:700; letter-spacing:.08em; color:var(--muted); }
+  .side { display:grid; gap:12px; align-content:start; }
+  .row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+  .tile { border-radius:20px; display:grid; place-items:center; min-height:120px; }
+  .dark { background:var(--ink); }
+  .or { background:var(--orange); }
+  .lt { background:#fff; box-shadow:inset 0 0 0 1px var(--line); }
+  .app { width:78px; height:78px; border-radius:20px; display:grid; place-items:center; background:var(--ink); }
+  .av { width:78px; height:78px; border-radius:50%; display:grid; place-items:center; background:var(--paper); }
+  .fav { display:flex; gap:12px; align-items:center; }
+  .info { background:#fff; border-radius:20px; padding:18px; box-shadow:inset 0 0 0 1px var(--line); font-size:.88rem; line-height:1.55; color:#4a4a54; }
+  .info h3 { margin:0 0 6px; font-family:Manrope; font-weight:800; font-size:1.4rem; color:var(--ink); letter-spacing:-.03em; }
+  .info p { margin:6px 0; }
+  .info b { color:var(--ink); }
+  .verdict { background:#f6f2ea; border-radius:10px; padding:8px 10px; font-size:.82rem; }
+  .lockup { display:flex; align-items:center; gap:12px; font-family:Manrope; font-weight:800; letter-spacing:-.05em; font-size:34px; color:var(--paper); }
+
+  /* motion */
+  @keyframes blink { 0%, 100% { opacity:.35; } 50% { opacity:1; } }
+  @keyframes ring { 0% { opacity:0; transform:scale(.7); } 40% { opacity:1; } 100% { opacity:0; transform:scale(1.15); } }
+  @keyframes bob { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+  @keyframes wink { 0%, 88%, 100% { transform:scaleY(1); } 93% { transform:scaleY(.1); } }
+  @keyframes draw { 0% { stroke-dashoffset:var(--len); } 55%, 100% { stroke-dashoffset:0; } }
+  .g { animation:blink 1.6s ease-in-out infinite; }
+  .g:nth-of-type(2n) { animation-delay:.4s; } .g:nth-of-type(3n) { animation-delay:.8s; }
+  .ring { animation:ring 2.4s ease-out infinite; transform-box:fill-box; transform-origin:0% 50%; }
+  .ring:nth-of-type(2) { animation-delay:.8s; }
+  .bob { animation:bob 3s ease-in-out infinite; }
+  .wink { animation:wink 4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .draw { stroke-dasharray:var(--len); animation:draw 3.5s ease-in-out infinite alternate; }
+  .still * { animation:none !important; stroke-dashoffset:0 !important; }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; } .draw { stroke-dashoffset:0; } }
+
+  .rec { margin-top:56px; background:var(--ink); color:#efece4; border-radius:26px; padding:30px; line-height:1.7; }
+  .rec h2 { font-family:Manrope; font-weight:800; letter-spacing:-.03em; margin:0 0 8px; color:#fff; }
+  .rec b { color:#fff; } .rec .o { color:var(--orange); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to all logo rounds</a>
+  <h1>Pen, mic, human. One mark.</h1>
+  <p class="lead">Built from Direction L, the nib mic. The trick that makes it work: a mic capsule is already shaped like a head, and a pen nib is already shaped like shoulders tapering to a point. So the person is not added on top; the pen and the mic become the person.</p>
+  <div id="opts"></div>
+  <div class="rec">
+    <h2>My pick: <span class="o">A, the speaker</span></h2>
+    <p><b>A</b> is the one that says all three at a glance and still reads at 16 pixels: a mic for a head, a nib for a body, and the orange breather hole where the heart is. It looks like a person first, which is what makes it warm; you notice the pen and the mic second, which is what makes it clever. It pairs with any name, including tellsy.</p>
+    <p><b>B, the ghostwriter,</b> is the best mascot: keep it for onboarding, empty states and social. <b>C</b> tells the story best but is too detailed for an app icon. <b>D</b> is the most elegant, but a thin line fades at small sizes.</p>
+  </div>
+</div>
+
+<script>
+const INK = "#16161d", PAPER = "#f6f4ef", OR = "#ff5c35";
+const light = { fg: INK, cut: "#fff", acc: OR };
+const dark = { fg: PAPER, cut: INK, acc: OR };
+
+const grille = (c, cx, cy) => {
+  // 3-4-3 grille dots on a mic head centred at cx, cy
+  const pts = [[-8,-8],[0,-8],[8,-8],[-12,0],[-4,0],[4,0],[12,0],[-8,8],[0,8],[8,8]];
+  return pts.map(([x, y]) => `<circle class="g" cx="${cx + x}" cy="${cy + y}" r="2.6" fill="${c.cut}"/>`).join("");
+};
+
+const MARKS = {
+  /* A · the speaker: mic head, nib body, orange heart */
+  A: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <g class="bob">
+        <rect x="42" y="4" width="36" height="48" rx="18" fill="${c.fg}"/>
+        <g fill="${c.cut}">
+          <circle class="g" cx="54" cy="17" r="2.4"/><circle class="g" cx="60" cy="14" r="2.4"/><circle class="g" cx="66" cy="17" r="2.4"/>
+          <circle class="g" cx="51" cy="25" r="2.4"/><circle class="g" cx="60" cy="23" r="2.4"/><circle class="g" cx="69" cy="25" r="2.4"/>
+          <circle class="g" cx="54" cy="33" r="2.4"/><circle class="g" cx="60" cy="32" r="2.4"/><circle class="g" cx="66" cy="33" r="2.4"/>
+        </g>
+      </g>
+      <path d="M38 56h44c11 0 18 8 18 18 0 3-1 6-3 8L62 116c-1 2-3 2-4 0L23 82c-2-2-3-5-3-8 0-10 7-18 18-18z" fill="${c.fg}"/>
+      <path d="M60 110V88" stroke="${c.cut}" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="60" cy="81" r="6.5" fill="${c.acc}"/>
+    </svg>`,
+
+  /* B · the ghostwriter: mic-shaped figure whose hem is a nib point */
+  B: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <g class="bob">
+        <path d="M60 8c-22 0-34 16-34 36v26c0 6 2 10 6 14l24 30c2 2 6 2 8 0l24-30c4-4 6-8 6-14V44C94 24 82 8 60 8z" fill="${c.fg}"/>
+        <g fill="${c.cut}" opacity=".9">
+          <circle class="g" cx="46" cy="22" r="2.3"/><circle class="g" cx="54" cy="18" r="2.3"/><circle class="g" cx="62" cy="17" r="2.3"/><circle class="g" cx="70" cy="18" r="2.3"/><circle class="g" cx="78" cy="22" r="2.3"/>
+        </g>
+        <circle cx="48" cy="48" r="5.5" fill="${c.cut}"/>
+        <path class="wink" d="M66 48q6-6 12 0" fill="none" stroke="${c.cut}" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M60 112V90" stroke="${c.cut}" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="60" cy="84" r="5.5" fill="${c.acc}"/>
+      </g>
+    </svg>`,
+
+  /* C · at the mic: a person speaking into a mic whose stand is a pen */
+  C: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <circle cx="36" cy="34" r="15" fill="${c.fg}"/>
+      <path d="M10 112c0-28 10-50 26-50s26 22 26 50z" fill="${c.fg}"/>
+      <g fill="none" stroke="${c.acc}" stroke-width="3.5" stroke-linecap="round">
+        <path class="ring" d="M56 32a10 10 0 0 1 0 12"/>
+        <path class="ring" d="M60 26a18 18 0 0 1 0 24"/>
+      </g>
+      <rect x="74" y="20" width="22" height="30" rx="11" fill="${c.fg}"/>
+      <g fill="${c.cut}"><circle cx="81" cy="29" r="2"/><circle cx="89" cy="29" r="2"/><circle cx="85" cy="36" r="2"/><circle cx="81" cy="42" r="2"/><circle cx="89" cy="42" r="2"/></g>
+      <path d="M80 52h10v40l-5 18-5-18z" fill="${c.fg}"/>
+      <path d="M85 106V94" stroke="${c.cut}" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="85" cy="90" r="3.6" fill="${c.acc}"/>
+    </svg>`,
+
+  /* D · one line: up from a nib tip, round a mic-grille head, back down */
+  D: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <path class="draw" style="--len:420" d="M60 112L28 66c-3-5 0-9 6-9h14c-10-6-14-14-14-24a26 26 0 0 1 52 0c0 10-4 18-14 24h14c6 0 9 4 6 9L60 112z"
+        fill="none" stroke="${c.fg}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <g stroke="${c.fg}" stroke-width="4" stroke-linecap="round"><path d="M48 26h24M46 35h28M50 44h20"/></g>
+      <path d="M60 106V84" stroke="${c.fg}" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="60" cy="78" r="5.5" fill="${c.acc}"/>
+    </svg>`,
+};
+
+const OPTS = [
+  { id: "A", name: "The speaker", pick: true,
+    how: "The head is a mic (the grille dots softly flicker, like it's listening), the body is a pen nib, and the nib's breather hole sits where the heart is, in orange.",
+    verdict: "<b>Strongest all-rounder.</b> Reads as a person first and a pen-mic second. Clear at favicon size." },
+  { id: "B", name: "The ghostwriter",
+    how: "A friendly figure shaped like a mic, whose hem tapers into a pen point instead of a ghost's wavy edge. One eye open, one winking. The grille is its hair.",
+    verdict: "<b>Best mascot.</b> Literally a ghostwriter, which is what the product is. A bit playful as the main logo." },
+  { id: "C", name: "At the mic",
+    how: "A person speaking (orange sound rings) into a mic whose stand is a pen with a nib at the bottom.",
+    verdict: "<b>Tells the story best,</b> as an illustration. Too detailed for an app icon or favicon." },
+  { id: "D", name: "One line",
+    how: "A single ink stroke that starts at the nib tip, rises into shoulders, loops round a head with grille lines, and comes back down. It draws itself.",
+    verdict: "<b>The most elegant</b> and premium. The thin line fades at small sizes; better as a large brand mark than an icon." },
+];
+
+document.getElementById("opts").innerHTML = OPTS.map(o => `
+  <section class="opt">
+    <div class="hero"><span class="n">${o.id}${o.pick ? " · MY PICK" : ""}</span><div style="width:250px;height:250px">${MARKS[o.id](light)}</div></div>
+    <div class="side">
+      <div class="row">
+        <div class="tile dark"><div class="app still"><div style="width:58px;height:58px">${MARKS[o.id](dark)}</div></div></div>
+        <div class="tile or"><div class="av still"><div style="width:56px;height:56px">${MARKS[o.id](light)}</div></div></div>
+        <div class="tile lt"><div class="fav still"><div style="width:32px;height:32px">${MARKS[o.id](light)}</div><div style="width:16px;height:16px">${MARKS[o.id](light)}</div></div></div>
+      </div>
+      <div class="tile dark" style="min-height:100px"><div class="lockup"><div style="width:52px;height:52px">${MARKS[o.id](dark)}</div>tellsy</div></div>
+      <div class="info">
+        <h3>${o.id} · ${o.name}</h3>
+        <p>${o.how}</p>
+        <p class="verdict">${o.verdict}</p>
+      </div>
+    </div>
+  </section>`).join("");
+</script>
+</body>
+</html>

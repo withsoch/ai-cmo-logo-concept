@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dastaan Brand Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --indigo: #1f2a6b;   /* primary: deep story-ink indigo */
+    --indigo-2: #2f3d8f;
+    --saffron: #e0a019;  /* the next chapter */
+    --paper: #f7f3ea;
+    --cream: #fffaf0;
+    --ink: #141a33;
+    --muted: #666b7a;
+    --line: #e4ddcd;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 44px 20px 90px; }
+  a.back { font-size: .85rem; color: var(--muted); }
+  .serif { font-family: "Young Serif", Georgia, serif; font-weight: 400; }
+  h1 { font-family: "Young Serif", serif; font-weight: 400; font-size: clamp(2.2rem, 1.3rem + 3.4vw, 3.8rem); letter-spacing: -0.02em; margin: 16px 0 10px; color: var(--indigo); }
+  h2 { font-family: "Young Serif", serif; font-weight: 400; font-size: 1.9rem; margin: 64px 0 8px; color: var(--indigo); }
+  .lead { max-width: 820px; color: #474c5c; line-height: 1.7; font-size: 1.05rem; }
+  .sub { color: #474c5c; max-width: 780px; line-height: 1.65; margin: 0 0 20px; }
+
+  /* ---- the wordmark ---- */
+  .wm { display: inline-flex; align-items: baseline; font-family: "Young Serif", serif; color: var(--indigo); letter-spacing: -0.025em; line-height: 1; white-space: nowrap; }
+  .wm .tail { display: inline-block; position: relative; height: .08em; width: var(--tail, .9em); margin-left: -.04em; background: currentColor; border-radius: 99px; transform: translateY(-.02em); }
+  .wm .tail::after { content: ""; position: absolute; right: -.26em; top: 50%; width: .2em; height: .2em; border-radius: 50%; transform: translateY(-50%); background: var(--dot, var(--saffron)); }
+  .wm.light { color: var(--cream); }
+
+  .hero { margin-top: 26px; border-radius: 28px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--line); padding: 64px 28px; display: grid; place-items: center; gap: 14px; text-align: center; }
+  .hero .urdu { font-family: "Noto Nastaliq Urdu", serif; font-size: 1.6rem; color: var(--indigo); opacity: .75; line-height: 2.2; }
+  .hero small { color: var(--muted); font-size: .85rem; }
+
+  .anatomy { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .anatomy div { background: #fff; border-radius: 16px; padding: 16px 18px; box-shadow: inset 0 0 0 1px var(--line); font-size: .9rem; line-height: 1.55; color: #474c5c; }
+  .anatomy b { display: block; color: var(--indigo); font-family: "Young Serif", serif; font-weight: 400; font-size: 1.15rem; margin-bottom: 4px; }
+
+  .marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .mk { border-radius: 20px; min-height: 190px; display: grid; place-items: center; gap: 6px; padding: 20px; box-shadow: inset 0 0 0 1px var(--line); background: #fff; }
+  .mk small { color: var(--muted); font-size: .75rem; }
+  .mk.ind { background: var(--indigo); box-shadow: none; }
+  .mk.ind small { color: rgba(255,250,240,.6); }
+  .mk.saf { background: var(--saffron); box-shadow: none; }
+  .mono { width: 96px; height: 96px; border-radius: 50%; background: var(--indigo); display: grid; place-items: center; position: relative; }
+  .mono span { font-family: "Young Serif", serif; color: var(--cream); font-size: 58px; line-height: 1; transform: translateY(-3px); }
+  .mono i { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--saffron); right: 21px; bottom: 25px; }
+  .appicon { width: 96px; height: 96px; border-radius: 24px; background: var(--indigo); display: grid; place-items: center; position: relative; box-shadow: 0 14px 30px -16px rgba(20,26,51,.7); }
+  .appicon span { font-family: "Young Serif", serif; color: var(--cream); font-size: 60px; line-height: 1; transform: translateY(-3px); }
+  .appicon i { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--saffron); right: 20px; bottom: 25px; }
+
+  .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .sw { border-radius: 16px; padding: 70px 14px 14px; font-size: .8rem; color: #fff; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+  .sw b { display: block; font-size: .95rem; }
+
+  /* ---- contexts ---- */
+  .ctx { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+  .frame { background: #fff; border-radius: 20px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+  .frame h4 { margin: 0; padding: 12px 16px; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); font-weight: 700; }
+
+  .li-banner { height: 120px; background: var(--indigo); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: flex-end; padding: 0 28px; }
+  .li-banner .line { position: absolute; left: 0; right: 0; bottom: 30px; height: 2px; background: rgba(255,250,240,.18); }
+  .li-banner .dot { position: absolute; right: 18px; bottom: 25px; width: 12px; height: 12px; border-radius: 50%; background: var(--saffron); }
+  .li-body { padding: 0 18px 18px; }
+  .li-av { width: 84px; height: 84px; border-radius: 16px; background: var(--indigo); border: 4px solid #fff; margin-top: -42px; display: grid; place-items: center; position: relative; }
+  .li-av span { font-family: "Young Serif", serif; color: var(--cream); font-size: 50px; line-height: 1; transform: translateY(-2px); }
+  .li-av i { position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--saffron); right: 16px; bottom: 20px; }
+  .li-name { font-weight: 700; font-size: 1.1rem; margin: 10px 0 2px; }
+  .li-meta { color: var(--muted); font-size: .82rem; line-height: 1.5; }
+  .li-btn { display: inline-block; margin-top: 12px; background: #0a66c2; color: #fff; font-weight: 600; font-size: .82rem; padding: 7px 16px; border-radius: 999px; }
+
+  .site-nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .site-nav nav { display: flex; gap: 12px; font-size: .76rem; color: var(--muted); white-space: nowrap; }
+  .site-nav { gap: 10px; }
+  .site-cta { white-space: nowrap; background: var(--saffron); color: var(--ink); font-weight: 700; font-size: .78rem; padding: 7px 12px; border-radius: 9px; }
+  .site-hero { padding: 30px 18px 34px; background: var(--cream); }
+  .site-hero h5 { margin: 0; font-family: "Young Serif", serif; font-weight: 400; font-size: 1.75rem; line-height: 1.15; color: var(--indigo); }
+  .site-hero h5 em { font-style: normal; color: var(--saffron); }
+  .site-hero p { margin: 10px 0 0; font-size: .86rem; color: #474c5c; }
+
+  .slack { padding: 16px; display: flex; gap: 12px; }
+  .slack .bot { width: 40px; height: 40px; border-radius: 9px; background: var(--indigo); display: grid; place-items: center; position: relative; flex: none; }
+  .slack .bot span { font-family: "Young Serif", serif; color: var(--cream); font-size: 26px; line-height: 1; transform: translateY(-1px); }
+  .slack .bot i { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron); right: 8px; bottom: 10px; }
+  .slack .who { font-weight: 700; font-size: .9rem; }
+  .slack .who em { font-style: normal; font-weight: 600; font-size: .66rem; background: #e8e8e8; color: #555; padding: 1px 4px; border-radius: 3px; margin-left: 4px; }
+  .slack .msg { font-size: .86rem; color: #222; line-height: 1.5; margin-top: 2px; }
+  .slack blockquote { margin: 8px 0; padding: 8px 10px; border-left: 4px solid var(--saffron); background: #faf7f0; font-size: .84rem; color: #333; border-radius: 0 6px 6px 0; }
+  .slack .btns { display: flex; gap: 8px; margin-top: 8px; }
+  .slack .btns { flex-wrap: wrap; }
+  .slack .btns span { white-space: nowrap; font-size: .76rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; border: 1px solid #ccc; }
+  .slack .btns span.go { background: #007a5a; color: #fff; border-color: #007a5a; }
+
+  .phone { padding: 22px; display: flex; justify-content: center; background: linear-gradient(160deg, #3a4aa6, #c9832a); }
+  .home { width: 230px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 12px; }
+  .home div { display: grid; justify-items: center; gap: 4px; font-size: .58rem; color: #fff; }
+  .home b { width: 46px; height: 46px; border-radius: 12px; background: rgba(255,255,255,.25); display: grid; place-items: center; }
+  .home b.us { background: var(--indigo); position: relative; }
+  .home b.us span { font-family: "Young Serif", serif; color: var(--cream); font-size: 29px; line-height: 1; transform: translateY(-1px); }
+  .home b.us i { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--saffron); right: 10px; bottom: 12px; }
+
+  .tab { padding: 16px; background: #dfe3ea; }
+  .tab-bar { display: flex; gap: 6px; }
+  .tab-bar div { background: #eef0f4; border-radius: 9px 9px 0 0; padding: 8px 12px; font-size: .78rem; display: flex; gap: 8px; align-items: center; color: #444; }
+  .tab-bar div.on { background: #fff; color: #111; }
+  .fav { width: 16px; height: 16px; border-radius: 4px; background: var(--indigo); position: relative; display: grid; place-items: center; }
+  .fav span { font-family: "Young Serif", serif; color: var(--cream); font-size: 11px; line-height: 1; }
+  .fav i { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--saffron); right: 3px; bottom: 4px; }
+  .tab-page { background: #fff; height: 70px; border-radius: 0 9px 9px 9px; }
+
+  .lines { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .lines div { background: #fff; border-radius: 16px; padding: 18px; box-shadow: inset 0 0 0 1px var(--line); }
+  .lines p { margin: 0; font-family: "Young Serif", serif; font-size: 1.3rem; color: var(--indigo); line-height: 1.3; }
+  .lines small { display: block; margin-top: 8px; color: var(--muted); font-size: .8rem; }
+
+  .checklist { background: #fff; border-radius: 20px; padding: 22px 26px; box-shadow: inset 0 0 0 1px var(--line); }
+  .checklist li { margin: 8px 0; line-height: 1.55; color: #474c5c; }
+  .checklist b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="names.html">← Back to the 30 names</a>
+  <h1>Dastaan. Your company's story, told every week.</h1>
+  <p class="lead">My pick from the 30 names, after a conflict check of the shortlist: Firsthand (a funded AI marketing company) and Heard (two funded startups) are out, Awaaz is crowded in AI voice, and Foreword sounds like existing AI writing tools. Dastaan came back clear in software. It means an epic tale told in instalments, which is exactly what the product does, and it grows into the AI CMO story: the whole company's narrative, not just posts. It also sits next to Soch: Soch is the thinking, Dastaan is the story.</p>
+
+  <div class="hero">
+    <span class="wm" style="font-size:clamp(3.4rem, 2rem + 6vw, 6.6rem)">dastaan<span class="tail" style="--tail:.95em"></span></span>
+    <span class="urdu" dir="rtl" lang="ur">داستان</span>
+    <small>das · TAAN &nbsp;—&nbsp; an epic tale, told in instalments</small>
+  </div>
+
+  <h2>The idea in the wordmark</h2>
+  <p class="sub">One signature move, and it carries the whole brand: the story never ends.</p>
+  <div class="anatomy">
+    <div><b>The line keeps going</b>The final n doesn't stop. Its stroke runs on as a line, because a company's story is never finished; there is always another week.</div>
+    <div><b>The saffron dot</b>Where the line lands: the next chapter, this week's post. It is the one accent in the system, and it moves wherever something new is about to happen.</div>
+    <div><b>A warm serif</b>Young Serif reads as a storyteller, not a SaaS dashboard. Lowercase keeps it approachable; the indigo keeps it serious enough for investors.</div>
+    <div><b>Urdu as a second voice</b>داستان appears in the lockup, on merch and in launch moments, never as decoration on every screen. It is the origin, not a costume.</div>
+  </div>
+
+  <h2>The marks</h2>
+  <p class="sub">The wordmark, its reversed version, and the monogram: a serif d with the saffron dot tucked into its bowl, as if the next chapter is already being written.</p>
+  <div class="marks">
+    <div class="mk"><span class="wm" style="font-size:3rem">dastaan<span class="tail"></span></span><small>Primary wordmark</small></div>
+    <div class="mk ind"><span class="wm light" style="font-size:3rem">dastaan<span class="tail"></span></span><small>Reversed</small></div>
+    <div class="mk"><div class="mono"><span>d</span><i></i></div><small>Monogram · avatar</small></div>
+    <div class="mk saf"><div class="appicon"><span>d</span><i></i></div><small style="color:rgba(20,26,51,.6)">App icon</small></div>
+  </div>
+
+  <h2>Palette and type</h2>
+  <div class="palette">
+    <div class="sw" style="background:var(--indigo)"><b>Story indigo</b>#1F2A6B · primary</div>
+    <div class="sw" style="background:var(--saffron);color:var(--ink)"><b>Saffron</b>#E0A019 · the next chapter, used once</div>
+    <div class="sw" style="background:var(--cream);color:var(--ink)"><b>Cream</b>#FFFAF0 · page</div>
+    <div class="sw" style="background:var(--ink)"><b>Night ink</b>#141A33 · text</div>
+    <div class="sw" style="background:#fff;color:var(--ink)"><b class="serif" style="font-size:1.3rem">Young Serif</b>Headlines · Inter for everything else</div>
+  </div>
+
+  <h2>In the wild</h2>
+  <p class="sub">The places a founder or an investor actually meets the brand.</p>
+  <div class="ctx">
+    <div class="frame">
+      <h4>LinkedIn company page</h4>
+      <div class="li-banner"><span class="wm light" style="font-size:2rem">dastaan<span class="tail" style="--tail:.6em"></span></span></div>
+      <div class="li-body">
+        <div class="li-av"><span>d</span><i></i></div>
+        <div class="li-name">Dastaan</div>
+        <div class="li-meta">Your 24/7 Head of Content. Your company's story, told every week.<br/>Software development · Tallinn, Estonia</div>
+        <span class="li-btn">+ Follow</span>
+      </div>
+    </div>
+
+    <div class="frame">
+      <h4>Website header</h4>
+      <div class="site-nav"><span class="wm" style="font-size:1.45rem">dastaan<span class="tail" style="--tail:.6em"></span></span><nav><span>How it works</span><span>Pricing</span></nav><span class="site-cta">Get started</span></div>
+      <div class="site-hero"><h5>Your company already has a story.<br/><em>We tell it every week.</em></h5><p>Website, LinkedIn and a 10-minute interview. Then posts in your voice, approved with a swipe.</p></div>
+    </div>
+
+    <div class="frame">
+      <h4>Slack approval</h4>
+      <div class="slack">
+        <div class="bot"><span>d</span><i></i></div>
+        <div>
+          <div class="who">Dastaan <em>APP</em> <span style="color:#888;font-weight:400;font-size:.75rem">9:02 AM</span></div>
+          <div class="msg">From Tuesday's call with Lumen Health, a new chapter:</div>
+          <blockquote>"Lumen closed March in 1.8 days. In January it took them 7. Same team of two."</blockquote>
+          <div class="btns"><span class="go">Approve</span><span>Revise</span><span>Skip</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <h4>Phone and browser</h4>
+      <div class="phone">
+        <div class="home">
+          <div><b></b>Mail</div><div><b></b>Slack</div><div><b class="us"><span>d</span><i></i></b>Dastaan</div><div><b></b>LinkedIn</div>
+          <div><b></b>Notes</div><div><b></b>Calendar</div><div><b></b>Photos</div><div><b></b>Maps</div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="tab-bar"><div class="on"><span class="fav"><span>d</span><i></i></span>Dastaan · This week</div><div>Inbox (3)</div></div>
+        <div class="tab-page"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>How it talks</h2>
+  <p class="sub">The name gives the brand a vocabulary: chapters, instalments, the next page. Lines to use:</p>
+  <div class="lines">
+    <div><p>Your company already has a story. We tell it every week.</p><small>Homepage headline</small></div>
+    <div><p>This week's chapter is ready.</p><small>Monday notification</small></div>
+    <div><p>Every founder has a dastaan.</p><small>Launch campaign</small></div>
+    <div><p>Aap ki dastaan, aap ki zubaani.</p><small>Urdu launch line: "your story, in your own words" (formal Aap)</small></div>
+  </div>
+
+  <h2>Before this is final</h2>
+  <div class="checklist">
+    <ol>
+      <li><b>Run a proper trademark search</b> for "Dastaan" in the EU (EUIPO TMview), the UK (UKIPO) and the US (USPTO), in classes 9 and 42 (software) and 35 (marketing services). My check was a web search for conflicting companies, not a legal clearance.</li>
+      <li><b>Buy the domains the same day you decide:</b> dastaan.app, getdastaan.com and dastaanhq.com all had no DNS record on 5 October 2026. Also check the LinkedIn company URL, the X handle and the Instagram handle.</li>
+      <li><b>Expect search competition:</b> dastaan.com is registered, and "Dastaan" is used by restaurants, songs and South Asian media. Different industries, but you will not own the search results at first.</li>
+      <li><b>Hand this page to a designer</b> to finish the wordmark: the join between the n and its line, the spacing, and the monogram's dot position. The idea is set; the curves need a professional hand.</li>
+    </ol>
+  </div>
+</div>
+</body>
+</html>

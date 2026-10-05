@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>30 Names and Logos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Unbounded:wght@600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Young+Serif&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Instrument+Serif&family=Space+Grotesk:wght@600;700&family=Lexend:wght@600;700&family=Archivo+Black&family=DM+Serif+Display&family=Sora:wght@600;700&family=Manrope:wght@700;800&family=Playfair+Display:wght@700;800&family=Rubik:wght@600;700&family=Gloock&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink:#1b2a41; --paper:#fbf6ec; --line:#e7dfcf; --muted:#6b6f76; --saf:#f2a33a; --good:#1f8a66; --bad:#b4472b; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1200px; margin:0 auto; padding:44px 20px 90px; }
+  a.back { font-size:.85rem; color:var(--muted); }
+  h1 { font-family:Outfit; font-weight:700; font-size:clamp(2rem,1.2rem + 3vw,3.2rem); letter-spacing:-.02em; margin:14px 0 8px; }
+  .lead { max-width:820px; color:#4b4f57; line-height:1.65; font-size:1.02rem; }
+  .method { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin:22px 0 10px; }
+  .method div { background:#fff; border-radius:14px; padding:14px 16px; box-shadow:inset 0 0 0 1px var(--line); font-size:.86rem; line-height:1.5; color:#4b4f57; }
+  .method b { display:block; color:var(--ink); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px; }
+
+  .bar { position:sticky; top:0; z-index:5; background:rgba(251,246,236,.92); backdrop-filter:blur(8px); padding:12px 0; margin:26px 0 8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-bottom:1px solid var(--line); }
+  .chip { border:0; background:#fff; box-shadow:inset 0 0 0 1px var(--line); padding:7px 12px; border-radius:999px; font:600 .8rem Inter; color:var(--ink); cursor:pointer; }
+  .chip.on { background:var(--ink); color:#fff; box-shadow:none; }
+  .bar label { margin-left:auto; font-size:.82rem; color:var(--muted); display:flex; gap:6px; align-items:center; }
+  .bar select { font:600 .8rem Inter; padding:6px 8px; border-radius:8px; border:1px solid var(--line); background:#fff; }
+
+  h2.sec { font-family:Outfit; font-size:1.5rem; margin:44px 0 4px; }
+  .sec-sub { color:#4b4f57; margin:0 0 16px; font-size:.95rem; max-width:760px; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:16px; }
+  .card { background:#fff; border-radius:22px; padding:18px; box-shadow:inset 0 0 0 1px var(--line); display:flex; flex-direction:column; gap:12px; }
+  .card.star { box-shadow:0 0 0 3px var(--saf), 0 22px 40px -26px rgba(27,42,65,.45); }
+  .top { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .num { font-size:.72rem; font-weight:700; color:var(--muted); letter-spacing:.06em; }
+  .terr { font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 8px; border-radius:999px; background:#f3efe6; color:#5a5f66; }
+  .stage { border-radius:16px; min-height:150px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:20px 22px; }
+  .word { line-height:1; white-space:nowrap; }
+  .script { font-family:"Noto Nastaliq Urdu", serif; font-size:1rem; line-height:2.2; opacity:.8; display:block; margin-top:2px; }
+  .avatar { width:62px; height:62px; flex:none; border-radius:50%; display:grid; place-items:center; position:relative; box-shadow:0 8px 18px -10px rgba(0,0,0,.35); }
+  .avatar i { position:absolute; width:12px; height:12px; border-radius:50%; right:6px; top:6px; }
+  .meaning { font-size:.9rem; color:#3c4048; line-height:1.5; margin:0; }
+  .meaning b { color:var(--ink); }
+  .idea { font-size:.82rem; color:#4b4f57; background:#f8f5ee; border-radius:10px; padding:8px 10px; margin:0; line-height:1.45; }
+  .use { font-size:.82rem; color:var(--muted); margin:0; }
+  .use span { color:var(--ink); font-weight:600; }
+  .scores { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+  .score { font-size:.66rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .dots { display:flex; gap:3px; margin-top:3px; }
+  .dots b { width:9px; height:9px; border-radius:50%; background:#e8e2d6; }
+  .dots b.on { background:var(--ink); }
+  .foot { display:flex; justify-content:space-between; gap:8px; align-items:flex-start; font-size:.78rem; flex-wrap:wrap; }
+  .dom { color:var(--muted); }
+  .dom .ok { color:var(--good); font-weight:700; }
+  .dom .no { color:var(--bad); font-weight:700; }
+  .risk { color:#7a3b26; }
+  .total { font-family:Outfit; font-weight:700; font-size:1rem; }
+
+  .short { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .short > div { background:#fff; overflow:hidden; border-radius:16px; padding:16px; box-shadow:inset 0 0 0 1px var(--line); }
+  .short h4 { margin:0 0 6px; font-family:Outfit; font-size:1.25rem; }
+  .short p { margin:0; font-size:.86rem; color:#4b4f57; line-height:1.5; }
+  .notes { margin-top:56px; padding-top:24px; border-top:1px solid var(--line); color:#4b4f57; line-height:1.7; max-width:860px; }
+  .notes h3 { color:var(--ink); font-family:Outfit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Munshi logo rounds</a>
+  <p style="margin:12px 0 0"><a href="dastaan.html" style="display:inline-block;background:#1f2a6b;color:#fffaf0;padding:9px 14px;border-radius:10px;font-weight:600;font-size:.88rem;text-decoration:none">My pick: Dastaan, developed →</a></p>
+  <h1>30 names, 30 logo ideas.</h1>
+  <p class="lead">Name first, logo second: a logo can only express a name. Six naming territories with five names each, so you compare strategies as well as words. Every logo here is type-led: a wordmark with one signature detail, plus the round avatar it becomes on LinkedIn and Slack. No pens, no bubbles, no waveforms.</p>
+
+  <div class="method">
+    <div><b>Distinctive</b>Would it stand out in a list of AI content tools?</div>
+    <div><b>Memorable</b>Can a founder say it once and remember it tomorrow?</div>
+    <div><b>Ownable</b>Domain signal plus how crowded the word already is as a brand.</div>
+    <div><b>Grows</b>Still fits when this becomes an AI CMO, not just LinkedIn posts?</div>
+  </div>
+  <p class="lead" style="font-size:.86rem">Domains were checked live on 5 October 2026: every exact .com and .ai is registered, so each card shows the practical variant that came back free (get…, …hq, .app, .so). <b>Free means no DNS record, not guaranteed for sale.</b> No trademark searches yet; scores are my judgment.</p>
+
+  <h2 class="sec">My shortlist</h2>
+  <p class="sec-sub">Not simply the top five scores: the best mix of score, a free domain variant, easy pronunciation, and a story you can tell in one sentence. Lafz and Bayaan score as well, but are harder to say on first read.</p>
+  <div class="short" id="shortlist"></div>
+
+  <div class="bar" id="bar">
+    <button class="chip on" data-t="all">All 30</button>
+  </div>
+
+  <div id="sections"></div>
+
+  <div class="notes">
+    <h3>How to choose</h3>
+    <p><strong>If the company is global B2B first, go with Heard.</strong> It is the outcome every founder wants, one syllable, a real word with emotional pull, and getheard.com came back free. Its weakness is trademark strength (common words are hard to protect), so pair it with a distinctive wordmark.</p>
+    <p><strong>If your story is the brand, go with Awaaz.</strong> It means voice, English speakers can say it on first read, and it carries the Pakistani-founder-in-Tallinn story without needing explanation beyond "it means voice". getawaaz.com and awaazhq.com came back free.</p>
+    <p><strong>Foreword is the most investor-credible:</strong> editorial, and it sounds like "forward", so it carries momentum as well as writing. foreword.app came back free.</p>
+    <p>Next step for whichever two you like: a trademark knockout search in the EU, UK and US, buy the domains the same day, then a designer takes the wordmark from concept to final.</p>
+  </div>
+</div>
+
+<script>
+/* All 30 options. Scores: d distinctive, m memorable, o ownable, g grows (1–5).
+   `dom` = the variants that came back free in the live DNS check.
+   Logo spec: font/weight/size/case, colours, and which letters carry the
+   accent; `detail` adds one signature move. */
+const T = {
+  heritage: { name: "Heritage", sub: "Urdu and Persian words. Your story, and nobody else can credibly own it." },
+  coined:   { name: "Coined", sub: "Invented words. Easiest to own, but they need marketing to mean something." },
+  metaphor: { name: "Metaphor", sub: "Real words that mean something without describing the product." },
+  teammate: { name: "AI teammate", sub: "A first name, as if you hired someone. Warm, but crowded." },
+  phrase:   { name: "Phrase", sub: "Names that sound like the promise." },
+  b2b:      { name: "Sharp B2B", sub: "Editorial and credible. The investor-friendly end." },
+};
+
+const N = [
+  // ---------------- Heritage ----------------
+  { n:"munshi", t:"heritage", script:"منشی", mean:"<b>Scribe, personal secretary.</b> The person who listened and wrote on your behalf.", idea:"Lowercase geometric wordmark; the dot of the i becomes a saffron ink drop.", use:"Let munshi handle it.", d:4,m:4,o:2,g:3, dom:[".so"], risk:"Common surname in South Asia; most variants registered.",
+    f:"Outfit", w:700, sz:46, c:"#1b2a41", bg:"#fbf6ec", acc:"#f2a33a", accIdx:[], detail:"idot", av:"m", avbg:"#1b2a41", avc:"#fbf6ec" },
+  { n:"awaaz", t:"heritage", script:"آواز", mean:"<b>Voice.</b> The thing every founder wants heard. Easy to say on first read: ah-waaz.", idea:"Bold grotesque; the double \"aa\" sits in saffron like a held note.", use:"Your awaaz, every week.", d:4,m:4,o:3,g:4, dom:["getawaaz.com","awaazhq.com",".so"], risk:"Used by some South Asian media brands.",
+    f:"Bricolage Grotesque", w:800, sz:48, c:"#0e3b43", bg:"#e9f4f1", acc:"#e8892b", accIdx:[2,3], av:"a", avbg:"#0e3b43", avc:"#ffd9a8", star:true },
+  { n:"lafz", t:"heritage", script:"لفظ", mean:"<b>Word.</b> Four letters, sharp and punchy.", idea:"Wide display type; the z gets the accent, like a signature flourish.", use:"Every lafz, yours.", d:5,m:3,o:4,g:3, dom:["getlafz.com","lafzhq.com",".so"], risk:"The final z sound is unfamiliar outside South Asia.",
+    f:"Unbounded", w:700, sz:44, c:"#3b1d4a", bg:"#f3ecf6", acc:"#d6336c", accIdx:[3], av:"L", avbg:"#3b1d4a", avc:"#fbe3ee" },
+  { n:"bayaan", t:"heritage", script:"بیان", mean:"<b>A statement; the telling of a story.</b> Founders making their public statement, weekly.", idea:"Warm editorial serif; the double a's echo, the second in accent.", use:"Make your bayaan.", d:4,m:3,o:4,g:4, dom:["getbayaan.com","bayaanhq.com",".so"], risk:"Spelling varies (bayan, bayaan).",
+    f:"Fraunces", w:700, sz:46, c:"#5a1b1b", bg:"#f8ece6", acc:"#c7772a", accIdx:[4], av:"b", avbg:"#5a1b1b", avc:"#f8dcc8" },
+  { n:"dastaan", t:"heritage", script:"داستان", mean:"<b>An epic tale.</b> Every company has one; this tells it in instalments.", idea:"Old-style serif with a long a-a-n tail, like a story that keeps going.", use:"Every founder has a dastaan.", d:4,m:3,o:4,g:4, dom:["dastaan.app","getdastaan.com","dastaanhq.com",".so"], risk:"Seven letters; less punchy as a verb.",
+    f:"Young Serif", w:400, sz:42, c:"#1f2a6b", bg:"#ecefff", acc:"#e0a019", accIdx:[1], av:"d", avbg:"#1f2a6b", avc:"#ffe6a6", star:true },
+
+  // ---------------- Coined ----------------
+  { n:"voxa", t:"coined", mean:"<b>From vox, voice.</b> Short, modern, global.", idea:"Tight geometric caps; the x is cut in two colours.", use:"Powered by voxa.", d:2,m:4,o:2,g:3, dom:[".so"], risk:"Sounds like many existing apps; most variants registered.",
+    f:"Syne", w:800, sz:46, c:"#111", bg:"#f1f1ee", acc:"#ff4d2e", accIdx:[2], upper:true, av:"V", avbg:"#111", avc:"#ff4d2e" },
+  { n:"tellio", t:"coined", mean:"<b>Tell + io.</b> Friendly and obvious: it tells your story.", idea:"Rounded sans; the two l's stand like a pair of quotation marks.", use:"Tellio drafted 12 posts.", d:3,m:4,o:3,g:3, dom:["gettellio.com","telliohq.com",".so"], risk:"Feels generic startup.",
+    f:"Plus Jakarta Sans", w:800, sz:46, c:"#123d6b", bg:"#e8f1fb", acc:"#2bb3a3", accIdx:[2,3], av:"t", avbg:"#123d6b", avc:"#c8f1ea" },
+  { n:"narra", t:"coined", mean:"<b>From narrate.</b> Elegant, soft, easy everywhere.", idea:"High-contrast serif, quiet and premium.", use:"Narra, your narrator.", d:3,m:4,o:1,g:3, dom:[], risk:"Every variant checked is registered.",
+    f:"Instrument Serif", w:400, sz:52, c:"#2b2b2b", bg:"#f4efe8", acc:"#b5651d", accIdx:[0], av:"N", avbg:"#2b2b2b", avc:"#f4e2cc" },
+  { n:"spokn", t:"coined", mean:"<b>Spoken, minus the e.</b> Exactly on message.", idea:"Grotesk wordmark with the missing e shown as a saffron gap.", use:"Get spokn.", d:3,m:3,o:2,g:2, dom:[".so"], risk:"Dropped-vowel names feel dated; people misspell it.",
+    f:"Space Grotesk", w:700, sz:46, c:"#1b2a41", bg:"#eef0f3", acc:"#f2a33a", accIdx:[], detail:"gap", av:"s", avbg:"#1b2a41", avc:"#f2a33a" },
+  { n:"loquo", t:"coined", mean:"<b>From Latin loqui, to speak</b> (as in eloquent).", idea:"Soft geometric type; the two o's are the same circle, one in accent.", use:"Loquo wrote this week's posts.", d:4,m:3,o:4,g:3, dom:["getloquo.com","loquohq.com",".so"], risk:"Can be heard as \"loco\".",
+    f:"Lexend", w:700, sz:46, c:"#2d1e5f", bg:"#efeafb", acc:"#ff7a59", accIdx:[4], av:"lq", avbg:"#2d1e5f", avc:"#ffd2c4" },
+
+  // ---------------- Metaphor ----------------
+  { n:"magpie", t:"metaphor", mean:"<b>The bird that collects shiny things.</b> It picks the best moments from your week.", idea:"Heavy black wordmark with one iridescent blue letter, like the feather flash.", use:"Magpie found 6 ideas in your week.", d:3,m:5,o:1,g:3, dom:[], risk:"Every variant checked is registered; a crowded brand name.",
+    f:"Archivo Black", w:400, sz:44, c:"#111", bg:"#f0f2f5", acc:"#2b59c3", accIdx:[3], av:"M", avbg:"#111", avc:"#9bb7ff" },
+  { n:"kindling", t:"metaphor", mean:"<b>What starts the fire.</b> Ideas from your week become the posts that catch.", idea:"Display serif; the i's dot becomes a flame-orange spark.", use:"Fresh kindling every Monday.", d:3,m:3,o:2,g:3, dom:[".so"], risk:"Close to Kindle; most variants registered.",
+    f:"DM Serif Display", w:400, sz:44, c:"#3a1f12", bg:"#fbeee2", acc:"#ff6a1a", accIdx:[], detail:"idot", av:"k", avbg:"#3a1f12", avc:"#ffb27a" },
+  { n:"encore", t:"metaphor", mean:"<b>Your best lines, again.</b> A crowd asking for more.", idea:"Bold sans with a little bow (accent) on the final e.", use:"Encore drafted this.", d:2,m:4,o:1,g:2, dom:[], risk:"Very crowded name.",
+    f:"Sora", w:700, sz:46, c:"#1b2a41", bg:"#eef0f5", acc:"#e0287d", accIdx:[5], av:"e", avbg:"#1b2a41", avc:"#ffc2dc" },
+  { n:"tandem", t:"metaphor", mean:"<b>Working alongside you.</b> Two riders, one bike.", idea:"Two-weight wordmark: \"tan\" bold, \"dem\" light, riding together.", use:"Write in tandem.", d:2,m:4,o:1,g:3, dom:[], risk:"Taken by a language app, a bank and more.",
+    f:"Manrope", w:800, sz:46, c:"#0f3d2e", bg:"#e7f4ee", acc:"#2e9e5b", accIdx:[3,4,5], av:"T", avbg:"#0f3d2e", avc:"#bff0d4" },
+  { n:"lantern", t:"metaphor", mean:"<b>Lights up the stories already in your week.</b>", idea:"Classic serif with a warm glow behind the a.", use:"Lantern lit up 4 stories.", d:2,m:3,o:1,g:3, dom:[], risk:"Crowded; reads more \"search tool\" than \"writer\".",
+    f:"Playfair Display", w:700, sz:44, c:"#2a2416", bg:"#fbf3df", acc:"#e3a21a", accIdx:[1], av:"L", avbg:"#2a2416", avc:"#ffd77a" },
+
+  // ---------------- AI teammate ----------------
+  { n:"wren", t:"teammate", mean:"<b>A tiny bird with one of the loudest songs.</b> Small team, big voice.", idea:"Compact bold wordmark; the w in accent, like a wing.", use:"Wren is writing your Tuesday post.", d:3,m:5,o:1,g:3, dom:[], risk:"Every variant registered; used by several startups.",
+    f:"Rubik", w:700, sz:52, c:"#3b2a1a", bg:"#f6efe6", acc:"#c46a2b", accIdx:[0], av:"w", avbg:"#3b2a1a", avc:"#f6c99c" },
+  { n:"juno", t:"teammate", mean:"<b>Roman protector goddess.</b> Watches over your reputation.", idea:"Rounded geometric; the o is a full saffron circle.", use:"Ask Juno.", d:2,m:4,o:2,g:3, dom:["junohq.com"], risk:"Many existing Juno brands.",
+    f:"Outfit", w:700, sz:52, c:"#24305e", bg:"#eceffa", acc:"#f2a33a", accIdx:[3], av:"J", avbg:"#24305e", avc:"#ffd9a0" },
+  { n:"otto", t:"teammate", mean:"<b>Sounds like auto(pilot).</b> A palindrome: it reads the same both ways.", idea:"Symmetric wordmark; the two o's mirror, one in accent.", use:"Otto has your week covered.", d:3,m:5,o:1,g:3, dom:[], risk:"Every variant registered; very common.",
+    f:"Unbounded", w:700, sz:46, c:"#1b2a41", bg:"#eef0f3", acc:"#2bb3a3", accIdx:[3], av:"o", avbg:"#1b2a41", avc:"#9fe7dd" },
+  { n:"remy", t:"teammate", mean:"<b>The talent behind the scenes who makes someone else look brilliant.</b>", idea:"Friendly serif with a smile-like y tail in accent.", use:"Remy wrote it. You get the credit.", d:3,m:4,o:1,g:2, dom:[], risk:"Strong Ratatouille association; variants registered.",
+    f:"Fraunces", w:700, sz:50, c:"#4a1630", bg:"#f8eaf0", acc:"#e0287d", accIdx:[3], av:"R", avbg:"#4a1630", avc:"#ffc2dc" },
+  { n:"margo", t:"teammate", mean:"<b>A sharp, confident editor persona.</b>", idea:"Elegant serif; the g's loop in accent.", use:"Margo edited your draft.", d:2,m:4,o:1,g:2, dom:[], risk:"Crowded; persona names box you in as you grow.",
+    f:"DM Serif Display", w:400, sz:50, c:"#1d2d2a", bg:"#e9f2ef", acc:"#1f8a66", accIdx:[3], av:"M", avbg:"#1d2d2a", avc:"#bfe8d8" },
+
+  // ---------------- Phrase ----------------
+  { n:"heard", t:"phrase", mean:"<b>The outcome every founder wants.</b> One syllable, real emotion: \"finally, I'm heard.\"", idea:"Confident lowercase sans; a saffron underline that tilts upward like a rising voice.", use:"Get heard.", d:4,m:5,o:3,g:4, dom:["getheard.com",".so"], risk:"Common word, harder to trademark; needs a distinctive wordmark.",
+    f:"Bricolage Grotesque", w:800, sz:52, c:"#1b2a41", bg:"#fff4e2", acc:"#f2a33a", accIdx:[], detail:"rise", av:"h", avbg:"#1b2a41", avc:"#f2a33a", star:true },
+  { n:"on record", t:"phrase", mean:"<b>Journalism language.</b> What you said, published and attributed.", idea:"Two words, the dot between them as a red recording light.", use:"Your week, on record.", d:3,m:4,o:2,g:3, dom:["onrecord.so"], risk:"Two words; most variants registered.",
+    f:"Space Grotesk", w:700, sz:40, c:"#141414", bg:"#f2f2f0", acc:"#e23b3b", accIdx:[], detail:"rec", av:"OR", avbg:"#141414", avc:"#ff9a9a" },
+  { n:"saywell", t:"phrase", mean:"<b>Say it well.</b> Reads like a trusted family firm.", idea:"Bookish serif; \"say\" in ink, \"well\" in accent.", use:"Saywell drafted your post.", d:3,m:3,o:3,g:3, dom:["getsaywell.com",".so"], risk:"Sounds like a surname or a pharmacy.",
+    f:"Playfair Display", w:800, sz:44, c:"#1f2a44", bg:"#eef1f8", acc:"#3a7bd5", accIdx:[3,4,5,6], av:"S", avbg:"#1f2a44", avc:"#bcd4ff" },
+  { n:"firsthand", t:"phrase", mean:"<b>Stories straight from you.</b> Not generic AI content: firsthand experience.", idea:"Bold sans; the \"first\" half slightly heavier, like a stamp of origin.", use:"Firsthand, every week.", d:3,m:4,o:3,g:4, dom:["getfirsthand.com"], risk:"Long; some existing users of the word.",
+    f:"Manrope", w:800, sz:42, c:"#2a1f14", bg:"#f8f0e6", acc:"#d9782d", accIdx:[0,1,2,3,4], av:"F", avbg:"#2a1f14", avc:"#ffc896", star:true },
+  { n:"verbatim", t:"phrase", mean:"<b>Your exact words.</b>", idea:"Monospace-feeling grotesk, like a transcript.", use:"Verbatim, but better.", d:3,m:4,o:2,g:2, dom:[".so"], risk:"Implies transcription, not writing; variants registered.",
+    f:"Space Grotesk", w:600, sz:42, c:"#1b2a41", bg:"#eef0f3", acc:"#f2a33a", accIdx:[0], av:"v", avbg:"#1b2a41", avc:"#f2a33a" },
+
+  // ---------------- Sharp B2B ----------------
+  { n:"foreword", t:"b2b", mean:"<b>What comes before the story</b>, and it sounds like \"forward\": writing plus momentum.", idea:"Editorial serif; the final d's stem extends into a forward stroke.", use:"Foreword wrote your Monday post.", d:4,m:4,o:3,g:4, dom:["foreword.app",".so"], risk:"People may spell it \"forward\".",
+    f:"Gloock", w:400, sz:46, c:"#1b2a41", bg:"#eef0f5", acc:"#f2a33a", accIdx:[], detail:"arrow", av:"F", avbg:"#1b2a41", avc:"#f2a33a", star:true },
+  { n:"byline", t:"b2b", mean:"<b>The name printed above the article.</b> Your name, on great writing.", idea:"Newspaper serif with a rule above, as in print.", use:"Your byline, every week.", d:3,m:4,o:1,g:3, dom:[], risk:"Crowded; every variant registered.",
+    f:"Playfair Display", w:800, sz:44, c:"#151515", bg:"#f3f1ec", acc:"#151515", accIdx:[], detail:"rule", av:"B", avbg:"#151515", avc:"#f3f1ec" },
+  { n:"cadence", t:"b2b", mean:"<b>The rhythm of showing up.</b>", idea:"Rhythmic sans with alternating weights.", use:"Keep your cadence.", d:1,m:4,o:1,g:3, dom:[], risk:"Cadence Design Systems owns the space; avoid.",
+    f:"Sora", w:700, sz:44, c:"#1b2a41", bg:"#eef0f5", acc:"#7b5cff", accIdx:[1,3,5], av:"c", avbg:"#1b2a41", avc:"#cbbcff" },
+  { n:"thesis", t:"b2b", mean:"<b>The founder's point of view.</b> Investor language.", idea:"Tall condensed caps, assertive.", use:"Publish your thesis.", d:3,m:4,o:1,g:4, dom:[], risk:"Every variant registered; used by an investor network.",
+    f:"Syne", w:800, sz:44, c:"#121a2a", bg:"#ecedf2", acc:"#f2a33a", accIdx:[0], upper:true, av:"T", avbg:"#121a2a", avc:"#f2a33a" },
+  { n:"plainspoken", t:"b2b", mean:"<b>Honest, direct, no fluff.</b> Positions against AI slop.", idea:"Unfussy grotesk; \"plain\" light, \"spoken\" bold.", use:"Be plainspoken.", d:4,m:3,o:3,g:3, dom:["plainspokenhq.com",".so"], risk:"Eleven letters; long for an avatar.",
+    f:"Bricolage Grotesque", w:800, sz:36, c:"#1b2a41", bg:"#f2efe8", acc:"#8a8f98", accIdx:[0,1,2,3,4], av:"p", avbg:"#1b2a41", avc:"#f2efe8" },
+];
+
+const total = (x) => x.d + x.m + x.o + x.g;
+
+function wordmark(x) {
+  const txt = x.upper ? x.n.toUpperCase() : x.n;
+  let html = [...txt].map((ch, i) => {
+    if (x.detail === "idot" && ch === "i") {
+      return `<span style="position:relative;display:inline-block">ı<span style="position:absolute;left:50%;top:.02em;width:.2em;height:.2em;border-radius:50% 50% 50% 0;transform:translateX(-50%) rotate(-45deg);background:${x.acc}"></span></span>`;
+    }
+    if (x.detail === "rec" && ch === " ") return `<span style="display:inline-block;width:.32em;height:.32em;border-radius:50%;background:${x.acc};margin:0 .18em;vertical-align:.12em"></span>`;
+    if (x.detail === "gap" && i === 3) return `<span style="display:inline-block;width:.42em;height:.12em;background:${x.acc};vertical-align:.12em;border-radius:3px;margin:0 .04em"></span>${ch}`;
+    return x.accIdx.includes(i) ? `<span style="color:${x.acc}">${ch}</span>` : ch;
+  }).join("");
+  if (x.n === "tandem") html = `<span style="font-weight:800">tan</span><span style="font-weight:400;color:${x.acc}">dem</span>`;
+  if (x.n === "plainspoken") html = `<span style="font-weight:400;color:${x.acc}">plain</span>spoken`;
+  if (x.n === "cadence") html = [...txt].map((ch, i) => `<span style="font-weight:${i % 2 ? 300 : 800}">${ch}</span>`).join("");
+  let extra = "";
+  if (x.detail === "rise") extra = `<svg width="100%" height="14" viewBox="0 0 200 14" preserveAspectRatio="none" style="display:block;margin-top:4px"><path d="M2 12 L198 3" stroke="${x.acc}" stroke-width="5" stroke-linecap="round"/></svg>`;
+  if (x.detail === "arrow") html += `<svg width=".7em" height=".5em" viewBox="0 0 30 20" style="margin-left:.06em"><path d="M2 10h22M17 3l8 7-8 7" fill="none" stroke="${x.acc}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  const rule = x.detail === "rule" ? `<div style="height:3px;background:${x.c};margin-bottom:8px;width:100%"></div>` : "";
+  return `<div>${rule}<div class="word" style="font-family:'${x.f}';font-weight:${x.w};font-size:${x.sz}px;color:${x.c};letter-spacing:${x.upper ? ".02em" : "-.02em"}">${html}</div>${extra}${x.script ? `<span class="script" dir="rtl" lang="ur" style="color:${x.c}">${x.script}</span>` : ""}</div>`;
+}
+
+function avatar(x) {
+  return `<div class="avatar" style="background:${x.avbg};color:${x.avc};font-family:'${x.f}';font-weight:${x.w};font-size:${x.av.length > 1 ? 22 : 30}px" title="LinkedIn / Slack avatar">${x.av}<i style="background:${x.acc === x.avbg ? x.avc : x.acc}"></i></div>`;
+}
+
+const dots = (v) => `<span class="dots">${[1,2,3,4,5].map(i => `<b class="${i <= v ? "on" : ""}"></b>`).join("")}</span>`;
+
+function card(x, i) {
+  return `<article class="card${x.star ? " star" : ""}" data-t="${x.t}">
+    <div class="top"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="terr">${T[x.t].name}</span></div>
+    <div class="stage" style="background:${x.bg}">${wordmark(x)}${avatar(x)}</div>
+    <p class="meaning">${x.mean}</p>
+    <p class="idea"><b>Logo idea:</b> ${x.idea}</p>
+    <p class="use">In use: <span>"${x.use}"</span></p>
+    <div class="scores">
+      <div class="score">Distinct${dots(x.d)}</div><div class="score">Memorable${dots(x.m)}</div>
+      <div class="score">Ownable${dots(x.o)}</div><div class="score">Grows${dots(x.g)}</div>
+    </div>
+    <div class="foot">
+      <span class="dom">${x.dom.length ? `<span class="ok">Free:</span> ${x.dom.map(d => d.startsWith(".") ? x.n.replace(" ", "") + d : d).join(", ")}` : `<span class="no">No free variant found</span>`}</span>
+      <span class="total">${total(x)}/20</span>
+    </div>
+    <p class="use risk">Risk: ${x.risk}</p>
+  </article>`;
+}
+
+// shortlist
+const SHORT = [
+  ["heard", "The outcome founders want, one syllable, getheard.com free. Best for a global B2B story."],
+  ["awaaz", "\"Voice\" in Urdu, easy to say, your story built in. Best if the founder story is the brand."],
+  ["foreword", "Editorial and sounds like \"forward\". The most investor-credible. foreword.app free."],
+  ["firsthand", "Anti-AI-slop positioning in one word: real stories, from you. getfirsthand.com free."],
+  ["dastaan", "An epic tale told weekly. dastaan.app free, the most domain options of any heritage name."],
+];
+document.getElementById("shortlist").innerHTML = SHORT.map(([n, why]) => {
+  const x = N.find(y => y.n === n);
+  return `<div><div style="background:${x.bg};border-radius:12px;padding:14px;margin-bottom:10px">${wordmark({ ...x, sz: Math.round(x.sz * .6), script: null })}</div><h4>${total(x)}/20</h4><p>${why}</p></div>`;
+}).join("");
+
+// sections + filter bar
+const bar = document.getElementById("bar");
+Object.entries(T).forEach(([k, v]) => bar.insertAdjacentHTML("beforeend", `<button class="chip" data-t="${k}">${v.name}</button>`));
+bar.insertAdjacentHTML("beforeend", `<label>Sort <select id="sort"><option value="terr">By territory</option><option value="score">By score</option></select></label>`);
+
+let filter = "all", sort = "terr";
+function render() {
+  const host = document.getElementById("sections");
+  const list = N.map((x, i) => ({ x, i })).filter(({ x }) => filter === "all" || x.t === filter);
+  if (sort === "score") {
+    list.sort((a, b) => total(b.x) - total(a.x));
+    host.innerHTML = `<h2 class="sec">Ranked by score</h2><p class="sec-sub">Distinctive + memorable + ownable + grows, out of 20.</p><div class="grid">${list.map(({ x, i }) => card(x, i)).join("")}</div>`;
+    return;
+  }
+  host.innerHTML = Object.entries(T).filter(([k]) => filter === "all" || k === filter).map(([k, v]) =>
+    `<h2 class="sec">${v.name}</h2><p class="sec-sub">${v.sub}</p><div class="grid">${list.filter(({ x }) => x.t === k).map(({ x, i }) => card(x, i)).join("")}</div>`
+  ).join("");
+}
+bar.addEventListener("click", (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  filter = b.dataset.t;
+  bar.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === b));
+  render();
+});
+document.getElementById("sort").addEventListener("change", (e) => { sort = e.target.value; render(); });
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voice Into Ink, Short Names</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink:#16161d; --paper:#f6f4ef; --orange:#ff5c35; --muted:#6c6c76; --line:#e5e1d8; --soft:#ece8df; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1120px; margin:0 auto; padding:44px 20px 90px; }
+  a.back { font-size:.85rem; color:var(--muted); }
+  h1 { font-family:Manrope; font-weight:800; font-size:clamp(2rem,1.2rem + 3vw,3.2rem); letter-spacing:-.035em; margin:14px 0 10px; }
+  .lead { max-width:800px; color:#4a4a54; line-height:1.65; }
+  .brief { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:22px 0 8px; }
+  .brief div { background:#fff; border-radius:14px; padding:12px 14px; font-size:.85rem; color:#4a4a54; line-height:1.5; box-shadow:inset 0 0 0 1px var(--line); }
+  .brief b { display:block; color:var(--ink); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:3px; }
+  .note { margin-top:10px; font-size:.85rem; color:#7a3b26; background:#fff3ee; border-radius:12px; padding:10px 14px; max-width:800px; line-height:1.55; }
+
+  .opt { margin-top:56px; display:grid; grid-template-columns:1.25fr 1fr; gap:16px; align-items:stretch; }
+  @media (max-width:860px) { .opt { grid-template-columns:1fr; } }
+  .hero { background:#fff; border-radius:26px; box-shadow:inset 0 0 0 1px var(--line); min-height:300px; display:grid; place-items:center; padding:30px; position:relative; }
+  .hero .n { position:absolute; left:20px; top:16px; font-size:.72rem; font-weight:700; letter-spacing:.08em; color:var(--muted); }
+  .side { display:grid; grid-template-rows:auto auto 1fr; gap:12px; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .tile { border-radius:20px; display:grid; place-items:center; min-height:130px; }
+  .tile.dark { background:var(--ink); }
+  .tile.or { background:var(--orange); }
+  .info { background:#fff; border-radius:20px; padding:18px; box-shadow:inset 0 0 0 1px var(--line); font-size:.88rem; line-height:1.55; color:#4a4a54; }
+  .info h3 { margin:0 0 4px; font-family:Manrope; font-weight:800; font-size:1.5rem; color:var(--ink); letter-spacing:-.03em; }
+  .info .say { color:var(--muted); font-size:.8rem; margin-bottom:10px; }
+  .info p { margin:6px 0; }
+  .info b { color:var(--ink); }
+  .dom { font-size:.8rem; color:#1f8a66; font-weight:600; }
+  .risk { font-size:.8rem; color:#8a3b22; }
+  .app { width:84px; height:84px; border-radius:22px; display:grid; place-items:center; }
+  .av { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; }
+
+  .wm { font-family:Manrope; font-weight:800; letter-spacing:-.045em; line-height:1; }
+
+  /* motion */
+  @keyframes bars { 0%,100% { transform:scaleY(.4); } 50% { transform:scaleY(1); } }
+  @keyframes draw { 0% { stroke-dashoffset:var(--len); } 45%, 85% { stroke-dashoffset:0; } 100% { stroke-dashoffset:0; opacity:.0; } }
+  @keyframes pop { 0%, 42% { transform:scale(0); } 55% { transform:scale(1.35); } 64%, 92% { transform:scale(1); } 100% { transform:scale(0); } }
+  .b { animation:bars .9s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .b:nth-of-type(2n) { animation-delay:.2s; } .b:nth-of-type(3n) { animation-delay:.4s; }
+  .d { stroke-dasharray:var(--len); animation:draw 3.6s ease-in-out infinite; }
+  .p { animation:pop 3.6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .still .b, .still .d, .still .p { animation:none; stroke-dashoffset:0; }
+  @media (prefers-reduced-motion: reduce) { .b, .d, .p { animation:none; stroke-dashoffset:0; } }
+
+  .rec { margin-top:64px; background:var(--ink); color:#efece4; border-radius:26px; padding:30px; line-height:1.7; }
+  .rec h2 { font-family:Manrope; font-weight:800; letter-spacing:-.03em; margin:0 0 8px; color:#fff; }
+  .rec b { color:#fff; }
+  .rec .o { color:var(--orange); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to all logo rounds</a>
+  <h1>Voice into ink, Byro-short.</h1>
+  <p class="lead">What you like about byro.ee, turned into a brief, then crossed with Direction H. Each name gets its own version of the voice-into-ink move, and every time the ink line becomes part of the name's letters, so mark and word are one idea.</p>
+  <div class="brief">
+    <div><b>Short</b>4–5 letters, one or two syllables.</div>
+    <div><b>Soft and lowercase</b>Friendly, not corporate, not literal.</div>
+    <div><b>A real root</b>Built from an Estonian word, sounds global.</div>
+    <div><b>Voice into ink</b>Sound becomes a handwritten line, landing on an orange dot.</div>
+  </div>
+  <p class="note"><b>Deliberately not Byro:</b> byro.ee is a direct competitor (a "reputation workspace" turning company knowledge into LinkedIn content, built in Estonia). So no forest green and no bird mascot here. The palette is ink, paper and Social Catalyst's orange, which you already own.</p>
+
+  <div id="opts"></div>
+
+  <div class="rec">
+    <h2>My pick: <span class="o">juttu</span></h2>
+    <p><b>juttu</b> is the strongest of the five. It means talk and story in Estonian, and "a thing, a story, a joke" in Finnish, so it lands across the Nordics; it is warm, says itself the way it is spelled, and juttu.ee, juttu.ai and getjuttu.com all came back free. Its mark is the best fusion with Direction H: the sound wave writes the j, and the j's dot is the orange ink drop, so the logo is the letter and the letter is the idea.</p>
+    <p><b>Runner-up: kuula</b> ("listen!"), the clearest product story, if you prefer meaning over warmth.</p>
+    <p>Before deciding: a quick check with a native Estonian speaker on connotations, then a trademark knockout in the EU. Domain checks were live on 5 October 2026; "free" means no DNS record, not guaranteed for sale.</p>
+  </div>
+</div>
+
+<script>
+const INK = "#16161d", PAPER = "#f6f4ef", OR = "#ff5c35";
+
+/* Each option: the big animated lockup, a still app icon, a still avatar.
+   `c` = { fg, bg, acc } so the same drawing renders light and dark. */
+const OPTS = [
+  {
+    name: "juttu", say: "YOO-too", root: "Estonian jutt: talk, story, a chat. In Finnish, juttu means a thing, a story, a joke.",
+    move: "The sound wave writes the j. Its dot is the orange ink drop.",
+    dom: "juttu.ee · juttu.ai · getjuttu.com", risk: "Very casual in tone; check it reads as warm, not flippant, to Estonian ears.",
+    lockup: c => `
+      <svg viewBox="0 0 420 150" width="100%" style="max-width:520px">
+        <g fill="${c.fg}">
+          <rect class="b" x="14" y="60" width="9" height="30" rx="4.5"/><rect class="b" x="30" y="46" width="9" height="58" rx="4.5"/>
+          <rect class="b" x="46" y="56" width="9" height="38" rx="4.5"/><rect class="b" x="62" y="40" width="9" height="70" rx="4.5"/>
+        </g>
+        <path class="d" style="--len:190" d="M78 75c8-10 16-10 22-2s14 0 18-6v58c0 20-14 26-30 18" fill="none" stroke="${c.fg}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="p" cx="118" cy="44" r="9" fill="${c.acc}"/>
+        <text x="132" y="112" font-family="Manrope" font-weight="800" font-size="86" letter-spacing="-4" fill="${c.fg}">uttu</text>
+      </svg>`,
+    icon: c => `<svg viewBox="0 0 100 100" width="62" height="62"><path d="M58 40v34c0 14-10 18-22 13" fill="none" stroke="${c.fg}" stroke-width="11" stroke-linecap="round"/><circle cx="58" cy="22" r="8" fill="${c.acc}"/></svg>`,
+  },
+  {
+    name: "kuula", say: "KOO-la", root: "Estonian kuula: \"listen!\" The product's first job, as a command.",
+    move: "The wave becomes one long underline beneath the word, ending on the dot: listening becomes writing.",
+    dom: "kuula.app · getkuula.com", risk: "kuula.ee and kuula.com are taken; it is an everyday Estonian word.",
+    lockup: c => `
+      <svg viewBox="0 0 420 150" width="100%" style="max-width:520px">
+        <text x="40" y="84" font-family="Manrope" font-weight="800" font-size="88" letter-spacing="-4" fill="${c.fg}">kuula</text>
+        <g fill="${c.fg}">
+          <rect class="b" x="40" y="104" width="8" height="22" rx="4"/><rect class="b" x="54" y="98" width="8" height="34" rx="4"/>
+          <rect class="b" x="68" y="106" width="8" height="18" rx="4"/>
+        </g>
+        <path class="d" style="--len:300" d="M84 115c20-12 40 12 60 0s40-12 60 0 40 12 60 0 34-8 50-2" fill="none" stroke="${c.fg}" stroke-width="7" stroke-linecap="round"/>
+        <circle class="p" cx="330" cy="112" r="9" fill="${c.acc}"/>
+      </svg>`,
+    icon: c => `<svg viewBox="0 0 100 100" width="62" height="62"><g fill="${c.fg}"><rect x="18" y="38" width="7" height="24" rx="3.5"/><rect x="30" y="30" width="7" height="40" rx="3.5"/></g><path d="M44 50c8-8 14 8 22 0s10-6 14 0" fill="none" stroke="${c.fg}" stroke-width="7" stroke-linecap="round"/><circle cx="84" cy="50" r="6" fill="${c.acc}"/></svg>`,
+  },
+  {
+    name: "haale", say: "HAA-leh", root: "From Estonian hääl, voice (hääle: \"of the voice\"). Written without the umlauts so it travels.",
+    move: "The wave rises into a looping cursive h, then runs into the word.",
+    dom: "haale.ee · haale.ai · haale.app · gethaale.com", risk: "Estonian speakers may read it as hääle with the umlauts missing; check that it feels intentional.",
+    lockup: c => `
+      <svg viewBox="0 0 420 150" width="100%" style="max-width:520px">
+        <g fill="${c.fg}">
+          <rect class="b" x="16" y="78" width="8" height="24" rx="4"/><rect class="b" x="30" y="70" width="8" height="40" rx="4"/><rect class="b" x="44" y="80" width="8" height="20" rx="4"/>
+        </g>
+        <path class="d" style="--len:230" d="M60 98c10-4 18-20 20-42 2-18-14-20-14 0 0 16 0 36-2 52 6-22 30-26 32-6 1 8 0 10 4 6" fill="none" stroke="${c.fg}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="112" y="108" font-family="Manrope" font-weight="800" font-size="78" letter-spacing="-3.5" fill="${c.fg}">aale</text>
+        <circle class="p" cx="262" cy="100" r="8" fill="${c.acc}"/>
+      </svg>`,
+    icon: c => `<svg viewBox="0 0 100 100" width="60" height="60"><path d="M24 74c8-4 14-16 16-34 1-14-11-15-11 0 0 13 0 28-2 40 5-17 24-20 26-5 1 6 0 8 3 5" fill="none" stroke="${c.fg}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="74" cy="72" r="7" fill="${c.acc}"/></svg>`,
+  },
+  {
+    name: "lugu", say: "LOO-goo", root: "Estonian lugu: story, and also a song. Every week, another one.",
+    move: "The wave turns into the letter g, and its descender curls into a loop that ends on the dot, like a story coming back round.",
+    dom: "getlugu.com", risk: "lugu.ee, .com, .ai and .app are all taken; the fewest domain options.",
+    lockup: c => `
+      <svg viewBox="0 0 420 150" width="100%" style="max-width:520px">
+        <g fill="${c.fg}">
+          <rect class="b" x="18" y="52" width="8" height="26" rx="4"/><rect class="b" x="32" y="42" width="8" height="46" rx="4"/><rect class="b" x="46" y="54" width="8" height="22" rx="4"/>
+        </g>
+        <text x="66" y="90" font-family="Manrope" font-weight="800" font-size="84" letter-spacing="-4" fill="${c.fg}">lu</text>
+        <path class="d" style="--len:260" d="M200 50a20 20 0 1 0 0 34M200 46v58c0 22-30 26-40 12" fill="none" stroke="${c.fg}" stroke-width="11" stroke-linecap="round"/>
+        <text x="212" y="90" font-family="Manrope" font-weight="800" font-size="84" letter-spacing="-4" fill="${c.fg}">u</text>
+        <circle class="p" cx="156" cy="112" r="9" fill="${c.acc}"/>
+      </svg>`,
+    icon: c => `<svg viewBox="0 0 100 100" width="62" height="62"><path d="M58 30a16 16 0 1 0 0 28M58 27v42c0 18-24 21-32 10" fill="none" stroke="${c.fg}" stroke-width="9" stroke-linecap="round"/><circle cx="23" cy="73" r="7" fill="${c.acc}"/></svg>`,
+  },
+  {
+    name: "tolko", say: "TOLL-ko", root: "From Estonian tõlk, interpreter: it translates your week into posts.",
+    move: "Wave on the left, ink on the right, joined by a slash: one language in, another out.",
+    dom: "tolko.ee · tolko.ai · gettolko.com", risk: "In Russian, только (tolko) means \"only\"; Estonia has many Russian speakers, so test this one carefully.",
+    lockup: c => `
+      <svg viewBox="0 0 420 150" width="100%" style="max-width:520px">
+        <g fill="${c.fg}">
+          <rect class="b" x="20" y="52" width="9" height="34" rx="4.5"/><rect class="b" x="36" y="40" width="9" height="58" rx="4.5"/><rect class="b" x="52" y="54" width="9" height="30" rx="4.5"/>
+        </g>
+        <path d="M84 104L104 34" stroke="${c.acc}" stroke-width="7" stroke-linecap="round"/>
+        <path class="d" style="--len:110" d="M118 72c10-14 18-14 22 0s12 14 20 0" fill="none" stroke="${c.fg}" stroke-width="8" stroke-linecap="round"/>
+        <text x="176" y="94" font-family="Manrope" font-weight="800" font-size="70" letter-spacing="-3" fill="${c.fg}">tolko</text>
+        <circle class="p" cx="338" cy="90" r="7" fill="${c.acc}"/>
+      </svg>`,
+    icon: c => `<svg viewBox="0 0 100 100" width="62" height="62"><g fill="${c.fg}"><rect x="14" y="38" width="7" height="24" rx="3.5"/><rect x="26" y="30" width="7" height="40" rx="3.5"/></g><path d="M42 72L54 28" stroke="${c.acc}" stroke-width="6" stroke-linecap="round"/><path d="M62 52c6-10 11-10 14 0s8 9 12 0" fill="none" stroke="${c.fg}" stroke-width="7" stroke-linecap="round"/></svg>`,
+  },
+];
+
+const light = { fg: INK, bg: "#fff", acc: OR };
+const dark = { fg: PAPER, bg: INK, acc: OR };
+
+document.getElementById("opts").innerHTML = OPTS.map((o, i) => `
+  <section class="opt">
+    <div class="hero"><span class="n">${String(i + 1).padStart(2, "0")}${i === 0 ? " · MY PICK" : ""}</span>${o.lockup(light)}</div>
+    <div class="side">
+      <div class="row">
+        <div class="tile dark"><div class="app still" style="background:${INK}">${o.icon(dark)}</div></div>
+        <div class="tile or"><div class="av still" style="background:${PAPER}">${o.icon(light)}</div></div>
+      </div>
+      <div class="tile dark" style="min-height:110px">${o.lockup(dark).replace('max-width:520px', 'max-width:300px')}</div>
+      <div class="info">
+        <h3>${o.name}</h3>
+        <div class="say">${o.say}</div>
+        <p><b>Root:</b> ${o.root}</p>
+        <p><b>The move:</b> ${o.move}</p>
+        <p class="dom">Free: ${o.dom}</p>
+        <p class="risk">Watch: ${o.risk}</p>
+      </div>
+    </div>
+  </section>`).join("");
+</script>
+</body>
+</html>

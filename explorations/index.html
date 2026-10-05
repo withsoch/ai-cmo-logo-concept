@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Munshi Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;700&family=Inter:wght@400;500;600&family=Bungee&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1b2a41;      /* deep ink blue */
+    --saffron: #f2a33a;  /* warm accent */
+    --paper: #fbf6ec;    /* warm off-white */
+    --line: #e7dfcf;
+    --muted: #6b6f76;
+    --night: #0f1724;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 48px 20px 80px; }
+  header h1 { font-family: Outfit, sans-serif; font-weight: 600; font-size: clamp(2rem, 1.2rem + 3vw, 3.2rem); margin: 0; letter-spacing: -0.02em; }
+  header p { max-width: 720px; color: var(--muted); line-height: 1.6; font-size: 1.05rem; }
+  .palette { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 8px; }
+  .sw { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); }
+  .sw i { width: 22px; height: 22px; border-radius: 6px; display: inline-block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+
+  .concept { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 32px; }
+  .concept-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; justify-content: space-between; }
+  .concept h2 { font-family: Outfit, sans-serif; font-weight: 600; font-size: 1.6rem; margin: 0; }
+  .tag { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .rec { background: var(--saffron); color: var(--ink); padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
+  .concept > p { color: var(--muted); max-width: 760px; line-height: 1.6; margin: 10px 0 24px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .tile { border-radius: 20px; padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; min-height: 240px; box-shadow: inset 0 0 0 1px var(--line); background: #fff; }
+  .tile.dark { background: var(--night); box-shadow: none; color: #fff; }
+  .tile.brand { background: var(--ink); box-shadow: none; color: #fff; }
+  .tile small { font-size: .72rem; color: var(--muted); letter-spacing: .04em; }
+  .tile.dark small, .tile.brand small { color: rgba(255,255,255,.55); }
+
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .word { font-family: Outfit, sans-serif; font-weight: 600; font-size: 2.4rem; letter-spacing: -0.03em; line-height: 1; }
+  .urdu { font-family: "Noto Nastaliq Urdu", serif; font-size: 1.15rem; line-height: 2; opacity: .75; }
+
+  .sizes { display: flex; align-items: end; gap: 18px; }
+  .app { border-radius: 22%; display: grid; place-items: center; }
+  .fav { display: flex; gap: 12px; align-items: center; }
+
+  .context { margin-top: 16px; border-radius: 16px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); background: #fff; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .nav .links { display: flex; gap: 20px; font-size: .88rem; color: var(--muted); }
+  .nav .cta { background: var(--saffron); color: var(--ink); font-weight: 600; font-size: .85rem; padding: 8px 14px; border-radius: 10px; }
+  .hero-mini { padding: 34px 20px; font-family: Outfit, sans-serif; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+  .hero-mini span { color: #c87d14; }
+
+  .notes { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 28px; color: var(--muted); line-height: 1.7; max-width: 820px; }
+  .notes h3 { color: var(--ink); font-family: Outfit, sans-serif; font-size: 1.25rem; }
+  @media (max-width: 640px) {
+    .nav .links { display: none; }
+    .word { font-size: 2rem; }
+  }
+
+  /* ---------- Round 2: the marketing lens ---------- */
+  :root { --magenta:#e0287d; --teal:#0e8f8f; --sun:#ffc93c; --red:#d7263d; --leaf:#2e9e5b; --cream:#fff6e5; }
+  .round { margin-top: 88px; padding: 40px 28px; border-radius: 28px; background: linear-gradient(135deg, #fff1d6, #ffe4ef 55%, #e2f6f4); }
+  .round h2.round-title { font-family: Outfit, sans-serif; font-size: clamp(1.8rem, 1.2rem + 2.2vw, 2.6rem); margin: 6px 0 10px; letter-spacing: -0.02em; }
+  .round > p { color: #4b4f57; max-width: 780px; line-height: 1.65; }
+  .lens { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--ink); color: var(--paper); }
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 0 0 22px; }
+  .why div { background: rgba(255,255,255,.75); border-radius: 14px; padding: 12px 14px; font-size: .86rem; color: #4b4f57; line-height: 1.5; }
+  .why b { display: block; color: var(--ink); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+  .concept.fun { border-top-color: rgba(27,42,65,.12); }
+
+  /* E · typing dots */
+  @keyframes bob { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-9px); } }
+  .typing circle { animation: bob 1.2s ease-in-out infinite; transform-box: fill-box; }
+  .typing circle:nth-of-type(2) { animation-delay: .15s; }
+  .typing circle:nth-of-type(3) { animation-delay: .3s; }
+  @keyframes ell { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75%, 100% { content: "..."; } }
+  .is-typing::after { content: "..."; animation: ell 1.6s steps(1) infinite; display: inline-block; width: 1.2em; text-align: left; }
+  .notif { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 16px; padding: 14px 16px; box-shadow: 0 14px 30px -18px rgba(27,42,65,.45); max-width: 330px; text-align: left; }
+  .notif p { margin: 0; font-size: .86rem; color: #3a3f47; line-height: 1.45; }
+  .notif strong { color: var(--ink); }
+  .hoodie { font-family: Outfit, sans-serif; font-weight: 700; color: var(--paper); font-size: 1.15rem; line-height: 1.15; text-align: center; letter-spacing: -0.01em; }
+
+  /* F · ledger */
+  .ledger-wiggle { transition: transform .4s cubic-bezier(.3,1.6,.5,1); }
+  .tile:hover .ledger-wiggle { transform: rotate(-6deg) scale(1.04); }
+  .tote { width: 150px; height: 170px; background: #f3e7cf; border-radius: 6px 6px 16px 16px; position: relative; display: grid; place-items: center; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+  .tote::before { content: ""; position: absolute; top: -34px; left: 38px; width: 74px; height: 50px; border: 6px solid #e4d3b0; border-bottom: none; border-radius: 40px 40px 0 0; }
+
+  /* G · truck art */
+  .truck { width: 100%; max-width: 560px; height: auto; border-radius: 14px; }
+  @keyframes shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+  .twinkle { animation: shimmer 2.4s ease-in-out infinite; }
+  .twinkle:nth-of-type(2n) { animation-delay: 1.2s; }
+  .bungee { font-family: Bungee, Outfit, sans-serif; }
+
+  /* H · voice to ink */
+  @keyframes draw { 0% { stroke-dashoffset: 420; } 45%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+  @keyframes bars { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
+  @keyframes dotpop { 0%, 40% { transform: scale(0); } 55% { transform: scale(1.25); } 65%, 90% { transform: scale(1); } 100% { transform: scale(0); } }
+  .wave rect { animation: bars .9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .wave rect:nth-of-type(2n) { animation-delay: .2s; }
+  .wave rect:nth-of-type(3n) { animation-delay: .4s; }
+  .ink-line { stroke-dasharray: 420; animation: draw 3.2s ease-in-out infinite; }
+  .ink-dot { animation: dotpop 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .reel { width: 180px; aspect-ratio: 9 / 16; border-radius: 18px; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--paper); }
+  .caveat { font-family: Caveat, cursive; font-weight: 700; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typing circle, .is-typing::after, .twinkle, .wave rect, .ink-line, .ink-dot { animation: none; }
+    .ink-line { stroke-dashoffset: 0; }
+  }
+
+  /* ---------- Round 3: merges + funky variants ---------- */
+  .round3 { margin-top: 88px; padding: 40px 28px; border-radius: 28px; background: linear-gradient(160deg, #e9f2ff, #fff4e0 50%, #ffe9f3); }
+  .group-title { font-family: Outfit, sans-serif; font-weight: 600; font-size: 1.25rem; margin: 40px 0 6px; }
+  .group-sub { color: #4b4f57; margin: 0 0 16px; font-size: .95rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 22px; padding: 20px; box-shadow: 0 1px 0 rgba(27,42,65,.06), inset 0 0 0 1px rgba(27,42,65,.08); display: flex; flex-direction: column; gap: 14px; }
+  .card.top { box-shadow: 0 0 0 3px var(--saffron), 0 20px 40px -24px rgba(27,42,65,.5); }
+  .card-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .card-head h4 { margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 1.2rem; }
+  .card-head span { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .stage { display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; }
+  .stage > div { border-radius: 16px; display: grid; place-items: center; min-height: 170px; }
+  .stage .lt { background: var(--paper); }
+  .stage .dk { background: var(--night); }
+  .stage .dk .app { width: 84px; height: 84px; border-radius: 22%; display: grid; place-items: center; }
+  .card p { margin: 0; font-size: .88rem; color: #4b4f57; line-height: 1.5; }
+  .card p b { color: var(--ink); }
+  .verdict { font-size: .8rem !important; padding: 8px 10px; border-radius: 10px; background: #f6f2ea; }
+  .pick { font-size: .68rem; font-weight: 800; letter-spacing: .06em; background: var(--saffron); color: var(--ink); padding: 3px 8px; border-radius: 999px; }
+
+  @keyframes r3bars { 0%, 100% { transform: scaleY(.45); } 50% { transform: scaleY(1); } }
+  @keyframes r3draw { 0% { stroke-dashoffset: var(--len); } 50%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+  @keyframes r3pop { 0%, 45% { transform: scale(0); } 58% { transform: scale(1.3); } 66%, 92% { transform: scale(1); } 100% { transform: scale(0); } }
+  @keyframes r3spin { to { transform: rotate(360deg); } }
+  @keyframes r3drip { 0%, 30% { transform: translateY(0); opacity: 1; } 80% { transform: translateY(16px); opacity: 0; } 100% { opacity: 0; } }
+  @keyframes r3ring { 0% { opacity: 0; transform: scale(.6); } 40% { opacity: 1; } 100% { opacity: 0; transform: scale(1.15); } }
+  @keyframes r3wink { 0%, 86%, 100% { transform: scaleY(1); } 90% { transform: scaleY(.1); } }
+  .a-bar { animation: r3bars .9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .a-bar:nth-of-type(2n) { animation-delay: .18s; } .a-bar:nth-of-type(3n) { animation-delay: .36s; }
+  .a-draw { animation: r3draw 3.4s ease-in-out infinite; }
+  .a-pop { animation: r3pop 3.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .a-spin { animation: r3spin 9s linear infinite; transform-box: fill-box; transform-origin: center; }
+  .a-drip { animation: r3drip 2.2s ease-in infinite; }
+  .a-ring { animation: r3ring 2.4s ease-out infinite; transform-box: view-box; }
+  .a-ring:nth-of-type(2) { animation-delay: .8s; } .a-ring:nth-of-type(3) { animation-delay: 1.6s; }
+  .a-wink { animation: r3wink 3.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .still * { animation: none !important; }
+  .still .a-draw { stroke-dashoffset: 0 !important; }
+  @media (prefers-reduced-motion: reduce) { .round3 * { animation: none !important; } .round3 .a-draw { stroke-dashoffset: 0 !important; } }
+</style>
+</head>
+<body>
+
+<!-- The marks, defined once and reused at every size. viewBox 0 0 100 100. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- A · Speech nib: a speech bubble whose tail is a pen nib. Hears, then writes. -->
+    <symbol id="speech" viewBox="0 0 100 100">
+      <!-- bubble -->
+      <rect x="8" y="8" width="84" height="58" rx="17" fill="currentColor"/>
+      <!-- the tail is a pen nib: shoulders under the bubble, a long point -->
+      <path d="M24 58h30l-4 12-15 26-15-26z" fill="currentColor"/>
+      <path d="M35 95V75" stroke="var(--cut)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="35" cy="71" r="4.2" fill="var(--cut)"/>
+      <!-- transcript lines + the idea dot -->
+      <rect x="22" y="23" width="56" height="7.5" rx="3.75" fill="var(--cut)"/>
+      <rect x="22" y="38" width="38" height="7.5" rx="3.75" fill="var(--cut)"/>
+      <circle cx="71" cy="41.75" r="5.4" fill="var(--accent)"/>
+    </symbol>
+
+    <!-- B · Qalam M: two reed-pen nibs side by side; their tips make the M. -->
+    <symbol id="qalam" viewBox="0 0 100 100">
+      <path d="M10 88V52L29 12l19 40v36a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4z" fill="currentColor"/>
+      <path d="M52 88V52l19-40 19 40v36a4 4 0 0 1-4 4H56a4 4 0 0 1-4-4z" fill="currentColor"/>
+      <path d="M29 14v36M71 14v36" stroke="var(--cut)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="29" cy="54" r="5" fill="var(--cut)"/>
+      <circle cx="71" cy="54" r="5" fill="var(--accent)"/>
+    </symbol>
+
+    <!-- C · Ink m: one continuous stroke, finished with an ink dot (the nuqta). -->
+    <symbol id="inkm" viewBox="0 0 100 100">
+      <path d="M14 76V44a14 14 0 0 1 28 0v32M42 44a14 14 0 0 1 28 0v22a10 10 0 0 0 10 10" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="84" cy="26" r="8" fill="var(--accent)"/>
+    </symbol>
+
+    <!-- D · Mascot: Munshi the ink drop. Friendly, abstract, no caricature. -->
+    <symbol id="drop" viewBox="0 0 100 100">
+      <path d="M50 6C50 6 86 46 86 64a36 36 0 0 1-72 0C14 46 50 6 50 6z" fill="currentColor"/>
+      <ellipse cx="36" cy="44" rx="5" ry="9" fill="#fff" opacity=".22" transform="rotate(25 36 44)"/>
+      <circle cx="40" cy="64" r="5.2" fill="var(--cut)"/>
+      <circle cx="60" cy="64" r="5.2" fill="var(--cut)"/>
+      <path d="M42 77q8 7 16 0" fill="none" stroke="var(--cut)" stroke-width="3.6" stroke-linecap="round"/>
+      <circle cx="74" cy="20" r="6" fill="var(--accent)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <p class="tag">Social Catalyst · naming exploration</p>
+    <p style="margin:6px 0 0"><a href="names.html" style="display:inline-block;background:#1b2a41;color:#fbf6ec;padding:9px 14px;border-radius:10px;font-weight:600;font-size:.88rem;text-decoration:none">New: 30 names and logo ideas →</a></p>
+    <p style="margin:6px 0 0"><a href="voice-ink.html" style="display:inline-block;background:#ff5c35;color:#16161d;padding:9px 14px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none">Newest: voice into ink, English names →</a></p>
+    <p style="margin:6px 0 0"><a href="nibmic.html" style="display:inline-block;background:#16161d;color:#f6f4ef;padding:9px 14px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none">Pen, mic, human: four marks →</a></p>
+    <p style="margin:6px 0 0"><a href="tellme.html" style="display:inline-block;background:#8b6cff;color:#fff;padding:9px 14px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none">Latest: tellme, playful speaker →</a></p>
+    <p style="margin:6px 0 0"><a href="tellme-friendly.html" style="display:inline-block;background:#ff6a3d;color:#2b2b38;padding:9px 14px;border-radius:10px;font-weight:800;font-size:.88rem;text-decoration:none">Newest: tellme, friendly characters →</a></p>
+    <p style="margin:6px 0 0"><a href="tellme-system.html" style="display:inline-block;background:#ffd166;color:#2b2b38;padding:9px 14px;border-radius:10px;font-weight:800;font-size:.88rem;text-decoration:none">Latest: tellme character system, every channel →</a></p>
+    <h1>Munshi, the scribe who listens.</h1>
+    <p>A munshi was the person who listened and wrote on someone's behalf: letters, records, speeches. That is the product: it hears your week and writes in your voice. Four directions below, each shown large, on dark, as an app icon, at favicon size, and in a header.</p>
+    <div class="palette">
+      <span class="sw"><i style="background:var(--ink)"></i>Ink #1B2A41</span>
+      <span class="sw"><i style="background:var(--saffron)"></i>Saffron #F2A33A</span>
+      <span class="sw"><i style="background:var(--paper)"></i>Paper #FBF6EC</span>
+      <span class="sw"><i style="background:var(--night)"></i>Night #0F1724</span>
+    </div>
+  </header>
+
+  <!-- ========== A ========== -->
+  <section class="concept">
+    <div class="concept-head">
+      <div><span class="tag">Direction A</span><h2>Speech nib</h2></div>
+      <span class="rec">Recommended</span>
+    </div>
+    <p>A speech bubble whose tail is a pen nib, with two lines of transcript inside and a saffron dot where the idea lands. It tells the whole product in one shape: it hears a conversation and turns it into writing. Reads clearly at 16 pixels.</p>
+    <div class="grid">
+      <div class="tile" style="--cut:#fff;--accent:var(--saffron);color:var(--ink)">
+        <svg width="132" height="132"><use href="#speech"/></svg>
+        <small>Primary mark</small>
+      </div>
+      <div class="tile dark" style="--cut:var(--night);--accent:var(--saffron);color:var(--paper)">
+        <div class="lockup"><svg width="56" height="56"><use href="#speech"/></svg><span class="word">munshi</span></div>
+        <span class="urdu" dir="rtl" lang="ur">منشی</span>
+        <small>Lockup on dark</small>
+      </div>
+      <div class="tile">
+        <div class="sizes">
+          <div class="app" style="width:96px;height:96px;background:var(--ink);--cut:var(--ink);--accent:var(--saffron);color:var(--paper)"><svg width="62" height="62"><use href="#speech"/></svg></div>
+          <div class="app" style="width:56px;height:56px;background:var(--saffron);--cut:var(--saffron);--accent:var(--ink);color:var(--ink)"><svg width="36" height="36"><use href="#speech"/></svg></div>
+        </div>
+        <div class="fav" style="--cut:#fff;--accent:var(--saffron);color:var(--ink)">
+          <svg width="32" height="32"><use href="#speech"/></svg>
+          <svg width="16" height="16"><use href="#speech"/></svg>
+        </div>
+        <small>App icons · 32 px · 16 px</small>
+      </div>
+    </div>
+    <div class="context">
+      <div class="nav">
+        <div class="lockup" style="gap:10px;--cut:#fff;--accent:var(--saffron);color:var(--ink)"><svg width="30" height="30"><use href="#speech"/></svg><span class="word" style="font-size:1.4rem">munshi</span></div>
+        <div class="links"><span>How it works</span><span>Integrations</span><span>Pricing</span></div>
+        <span class="cta">Get started</span>
+      </div>
+      <div class="hero-mini">Your 24/7 Head of Content <span>already heard your week.</span></div>
+    </div>
+  </section>
+
+  <!-- ========== B ========== -->
+  <section class="concept">
+    <div class="concept-head">
+      <div><span class="tag">Direction B</span><h2>Qalam M</h2></div>
+    </div>
+    <p>Two reed-pen nibs side by side; their points form the M. The most heritage-forward option and the most distinctive letterform. It says "writer" more than "listener", so the meetings story has to come from the copy rather than the mark.</p>
+    <div class="grid">
+      <div class="tile" style="--cut:#fff;--accent:var(--saffron);color:var(--ink)">
+        <svg width="132" height="132"><use href="#qalam"/></svg>
+        <small>Primary mark</small>
+      </div>
+      <div class="tile dark" style="--cut:var(--night);--accent:var(--saffron);color:var(--paper)">
+        <div class="lockup"><svg width="56" height="56"><use href="#qalam"/></svg><span class="word">munshi</span></div>
+        <span class="urdu" dir="rtl" lang="ur">منشی</span>
+        <small>Lockup on dark</small>
+      </div>
+      <div class="tile">
+        <div class="sizes">
+          <div class="app" style="width:96px;height:96px;background:var(--ink);--cut:var(--ink);--accent:var(--saffron);color:var(--paper)"><svg width="62" height="62"><use href="#qalam"/></svg></div>
+          <div class="app" style="width:56px;height:56px;background:var(--saffron);--cut:var(--saffron);--accent:var(--ink);color:var(--ink)"><svg width="36" height="36"><use href="#qalam"/></svg></div>
+        </div>
+        <div class="fav" style="--cut:#fff;--accent:var(--saffron);color:var(--ink)">
+          <svg width="32" height="32"><use href="#qalam"/></svg>
+          <svg width="16" height="16"><use href="#qalam"/></svg>
+        </div>
+        <small>App icons · 32 px · 16 px</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== C ========== -->
+  <section class="concept">
+    <div class="concept-head">
+      <div><span class="tag">Direction C</span><h2>Ink m</h2></div>
+    </div>
+    <p>A lowercase m drawn as one continuous stroke, finished with an ink dot, a nod to the nuqta in Urdu script. The quietest and most "software" of the four: it would sit well next to Linear or Notion, but it carries the least of the story.</p>
+    <div class="grid">
+      <div class="tile" style="--accent:var(--saffron);color:var(--ink)">
+        <svg width="132" height="132"><use href="#inkm"/></svg>
+        <small>Primary mark</small>
+      </div>
+      <div class="tile dark" style="--accent:var(--saffron);color:var(--paper)">
+        <div class="lockup"><svg width="56" height="56"><use href="#inkm"/></svg><span class="word">munshi</span></div>
+        <span class="urdu" dir="rtl" lang="ur">منشی</span>
+        <small>Lockup on dark</small>
+      </div>
+      <div class="tile">
+        <div class="sizes">
+          <div class="app" style="width:96px;height:96px;background:var(--ink);--accent:var(--saffron);color:var(--paper)"><svg width="62" height="62"><use href="#inkm"/></svg></div>
+          <div class="app" style="width:56px;height:56px;background:var(--saffron);--accent:var(--ink);color:var(--ink)"><svg width="36" height="36"><use href="#inkm"/></svg></div>
+        </div>
+        <div class="fav" style="--accent:var(--saffron);color:var(--ink)">
+          <svg width="32" height="32"><use href="#inkm"/></svg>
+          <svg width="16" height="16"><use href="#inkm"/></svg>
+        </div>
+        <small>App icons · 32 px · 16 px</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== D ========== -->
+  <section class="concept">
+    <div class="concept-head">
+      <div><span class="tag">Direction D · mascot</span><h2>Munshi the ink drop</h2></div>
+    </div>
+    <p>A friendly ink-drop character with a saffron spark: the mascot for onboarding, empty states, the interview screen and social posts. Deliberately abstract, so the name carries the heritage and the character never turns into a caricature. Pairs best with Direction A as the logo.</p>
+    <div class="grid">
+      <div class="tile" style="--cut:#fff;--accent:var(--saffron);color:var(--ink)">
+        <svg width="132" height="132"><use href="#drop"/></svg>
+        <small>Mascot</small>
+      </div>
+      <div class="tile brand" style="--cut:var(--ink);--accent:var(--saffron);color:var(--saffron)">
+        <svg width="96" height="96"><use href="#drop"/></svg>
+        <span style="font-family:Outfit;font-weight:600;font-size:1.05rem">"I heard 6 ideas in your week."</span>
+        <small>In the product: idea inbox empty state</small>
+      </div>
+      <div class="tile">
+        <div class="sizes">
+          <div class="app" style="width:96px;height:96px;background:var(--saffron);--cut:var(--saffron);--accent:var(--paper);color:var(--ink)"><svg width="64" height="64"><use href="#drop"/></svg></div>
+          <div class="app" style="width:56px;height:56px;background:var(--ink);--cut:var(--ink);--accent:var(--saffron);color:var(--paper)"><svg width="38" height="38"><use href="#drop"/></svg></div>
+        </div>
+        <small>Stickers and avatars</small>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="notes">
+    <h3>My recommendation</h3>
+    <p><strong>Direction A as the logo, Direction D as the mascot.</strong> The speech nib is the only mark that explains the product without words (hears, then writes), which matters most for the integrations story you are pitching. The ink drop gives the brand warmth in the places a logo can't: the interview, empty states, social.</p>
+    <p><strong>Before committing to the name:</strong> check the trademark in your target markets (EU, UK, US) and the domains (munshi.ai, getmunshi.com, munshi.app). "Munshi" is a common word and surname in South Asia, so expect existing businesses using it; what matters is whether any are in software or marketing.</p>
+    <p>These are concept sketches drawn in code, not final artwork. Once you pick a direction, a designer should refine the curves and spacing before it goes on anything printed.</p>
+  </div>
+  <!-- =================== ROUND 2 =================== -->
+  <section class="round">
+    <span class="lens">Round 2 · the marketing lens</span>
+    <h2 class="round-title">Same name, four new vantage points.</h2>
+    <p>Round 1 asked what a munshi <em>is</em>, and drew the scribe's tools. Round 2 asks how Munshi shows up in the wild: in a feed, on a laptop lid, on a launch banner, in a Reel. Each option comes from a different angle: internet language, a cultural object, Pakistani pop culture, and motion.</p>
+
+    <!-- ===== E ===== -->
+    <section class="concept fun">
+      <div class="concept-head">
+        <div><span class="tag">Direction E · internet language</span><h2>munshi is typing…</h2></div>
+        <span class="rec">Strongest for marketing</span>
+      </div>
+      <div class="why">
+        <div><b>The idea</b>Everyone knows the three typing dots. Here they mean someone is writing for you, right now.</div>
+        <div><b>Why it spreads</b>It turns into a phrase: "let munshi handle it", "did you munshi that call?". Brands win when they become a verb.</div>
+        <div><b>Risk</b>Typing dots are common UI; the saffron dot and the bubble's nib corner keep it ownable.</div>
+      </div>
+      <div class="grid">
+        <div class="tile" style="color:var(--ink)">
+          <svg class="typing" width="150" height="120" viewBox="0 0 150 120" aria-label="munshi is typing mark">
+            <path d="M28 12h94a20 20 0 0 1 20 20v40a20 20 0 0 1-20 20H52l-26 18 4-18h-2A20 20 0 0 1 8 72V32a20 20 0 0 1 20-20z" fill="var(--ink)"/>
+            <circle cx="48" cy="52" r="9" fill="var(--paper)"/>
+            <circle cx="75" cy="52" r="9" fill="var(--paper)"/>
+            <circle cx="102" cy="52" r="9" fill="var(--saffron)"/>
+          </svg>
+          <span class="word" style="font-size:1.6rem">munshi <span class="is-typing" style="color:var(--muted);font-weight:500">is typing</span></span>
+          <small>Animated mark</small>
+        </div>
+        <div class="tile" style="background:#eef1f6">
+          <div class="notif">
+            <svg width="36" height="36" viewBox="0 0 150 120"><path d="M28 12h94a20 20 0 0 1 20 20v40a20 20 0 0 1-20 20H52l-26 18 4-18h-2A20 20 0 0 1 8 72V32a20 20 0 0 1 20-20z" fill="var(--ink)"/><circle cx="48" cy="52" r="9" fill="#fff"/><circle cx="75" cy="52" r="9" fill="#fff"/><circle cx="102" cy="52" r="9" fill="var(--saffron)"/></svg>
+            <p><strong>munshi</strong> · now<br/>Your Tuesday call with Lumen just became a post. Swipe to approve?</p>
+          </div>
+          <small>Slack notification</small>
+        </div>
+        <div class="tile" style="background:var(--ink);box-shadow:none">
+          <div class="hoodie">I let<br/><span style="color:var(--saffron)">munshi</span><br/>handle it.</div>
+          <small>Merch: hoodie back print</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== F ===== -->
+    <section class="concept fun">
+      <div class="concept-head">
+        <div><span class="tag">Direction F · cultural object</span><h2>The bahi-khata</h2></div>
+      </div>
+      <div class="why">
+        <div><b>The idea</b>The red, cloth-bound ledger tied with string that munshis kept for every merchant. Your week, on the books.</div>
+        <div><b>Why it spreads</b>A colourful object people recognise instantly in South Asia, and that reads as "notebook" everywhere else. Perfect for merch.</div>
+        <div><b>Risk</b>Says "records" more than "voice"; works best as a merch and campaign object next to logo A or E.</div>
+      </div>
+      <div class="grid">
+        <div class="tile" style="color:var(--ink)">
+          <svg class="ledger-wiggle" width="140" height="140" viewBox="0 0 100 100" aria-label="bahi-khata ledger mark">
+            <rect x="18" y="10" width="66" height="82" rx="8" fill="var(--red)"/>
+            <rect x="18" y="10" width="12" height="82" rx="6" fill="#a8192b"/>
+            <rect x="84" y="16" width="4" height="70" rx="2" fill="#f5e6c8"/>
+            <path d="M18 54h66" stroke="var(--sun)" stroke-width="4"/>
+            <path d="M57 56l-4 18M59 56l5 17" stroke="var(--sun)" stroke-width="3.2" fill="none" stroke-linecap="round"/><circle cx="53" cy="75" r="2.6" fill="var(--sun)"/><circle cx="64" cy="74" r="2.6" fill="var(--sun)"/>
+            <circle cx="58" cy="54" r="5" fill="var(--sun)"/>
+            <rect x="40" y="22" width="34" height="18" rx="4" fill="var(--cream)"/>
+            <text x="57" y="35.5" text-anchor="middle" font-family="Noto Nastaliq Urdu, serif" font-size="9" fill="var(--red)">منشی</text>
+          </svg>
+          <small>Mark · hover it</small>
+        </div>
+        <div class="tile" style="background:#fdf3e1">
+          <div class="tote">
+            <div style="text-align:center">
+              <svg width="64" height="64" viewBox="0 0 100 100"><rect x="18" y="10" width="66" height="82" rx="8" fill="var(--red)"/><rect x="18" y="10" width="12" height="82" rx="6" fill="#a8192b"/><path d="M18 54h66" stroke="var(--sun)" stroke-width="4"/><circle cx="58" cy="54" r="5" fill="var(--sun)"/><rect x="40" y="22" width="34" height="18" rx="4" fill="var(--cream)"/></svg>
+              <div class="word" style="font-size:1.1rem;color:var(--red);margin-top:6px">your week,<br/>on the books.</div>
+            </div>
+          </div>
+          <small>Merch: tote bag</small>
+        </div>
+        <div class="tile" style="background:var(--red);box-shadow:none">
+          <div style="font-family:Outfit;font-weight:700;color:var(--cream);font-size:1.5rem;line-height:1.15;text-align:center">Every story<br/>you told this week,<br/><span style="color:var(--sun)">kept.</span></div>
+          <small style="color:rgba(255,246,229,.7)">LinkedIn ad</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== G ===== -->
+    <section class="concept fun">
+      <div class="concept-head">
+        <div><span class="tag">Direction G · Pakistani pop culture</span><h2>Truck-art Munshi</h2></div>
+        <span class="rec" style="background:var(--magenta);color:#fff">Most distinctive</span>
+      </div>
+      <div class="why">
+        <div><b>The idea</b>The maximalist colour of Pakistani truck art: flower borders, chains of dots, bold painted lettering, and an Urglish line in the formal Aap.</div>
+        <div><b>Why it spreads</b>No B2B tool on LinkedIn looks like this. It is genuinely your story, and it stops the scroll.</div>
+        <div><b>Risk</b>Too loud for the product UI. Use it as the campaign layer (launch, banners, stickers) over a calm core logo.</div>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr">
+        <div class="tile" style="background:#14202e;box-shadow:none;padding:24px">
+          <svg class="truck" viewBox="0 0 560 230" aria-label="truck-art Munshi banner">
+            <rect x="4" y="4" width="552" height="222" rx="16" fill="var(--teal)"/>
+            <rect x="18" y="18" width="524" height="194" rx="10" fill="none" stroke="var(--sun)" stroke-width="5"/>
+            <g fill="var(--sun)">
+              <circle cx="40" cy="11" r="4"/><circle cx="72" cy="11" r="4"/><circle cx="104" cy="11" r="4"/><circle cx="136" cy="11" r="4"/><circle cx="168" cy="11" r="4"/><circle cx="200" cy="11" r="4"/><circle cx="232" cy="11" r="4"/><circle cx="264" cy="11" r="4"/><circle cx="296" cy="11" r="4"/><circle cx="328" cy="11" r="4"/><circle cx="360" cy="11" r="4"/><circle cx="392" cy="11" r="4"/><circle cx="424" cy="11" r="4"/><circle cx="456" cy="11" r="4"/><circle cx="488" cy="11" r="4"/><circle cx="520" cy="11" r="4"/>
+              <circle cx="40" cy="219" r="4"/><circle cx="72" cy="219" r="4"/><circle cx="104" cy="219" r="4"/><circle cx="136" cy="219" r="4"/><circle cx="168" cy="219" r="4"/><circle cx="200" cy="219" r="4"/><circle cx="232" cy="219" r="4"/><circle cx="264" cy="219" r="4"/><circle cx="296" cy="219" r="4"/><circle cx="328" cy="219" r="4"/><circle cx="360" cy="219" r="4"/><circle cx="392" cy="219" r="4"/><circle cx="424" cy="219" r="4"/><circle cx="456" cy="219" r="4"/><circle cx="488" cy="219" r="4"/><circle cx="520" cy="219" r="4"/>
+            </g>
+            <!-- corner flowers -->
+            <g>
+              <g transform="translate(56 58)"><circle r="20" fill="var(--magenta)"/><circle cx="0" cy="-20" r="9" fill="var(--red)"/><circle cx="20" cy="0" r="9" fill="var(--red)"/><circle cx="0" cy="20" r="9" fill="var(--red)"/><circle cx="-20" cy="0" r="9" fill="var(--red)"/><circle r="9" fill="var(--sun)" class="twinkle"/></g>
+              <g transform="translate(504 58)"><circle r="20" fill="var(--magenta)"/><circle cx="0" cy="-20" r="9" fill="var(--red)"/><circle cx="20" cy="0" r="9" fill="var(--red)"/><circle cx="0" cy="20" r="9" fill="var(--red)"/><circle cx="-20" cy="0" r="9" fill="var(--red)"/><circle r="9" fill="var(--sun)" class="twinkle"/></g>
+              <g transform="translate(56 172)"><circle r="16" fill="var(--sun)"/><circle cx="0" cy="-16" r="7" fill="var(--leaf)"/><circle cx="16" cy="0" r="7" fill="var(--leaf)"/><circle cx="0" cy="16" r="7" fill="var(--leaf)"/><circle cx="-16" cy="0" r="7" fill="var(--leaf)"/><circle r="6" fill="#fff" class="twinkle"/></g>
+              <g transform="translate(504 172)"><circle r="16" fill="var(--sun)"/><circle cx="0" cy="-16" r="7" fill="var(--leaf)"/><circle cx="16" cy="0" r="7" fill="var(--leaf)"/><circle cx="0" cy="16" r="7" fill="var(--leaf)"/><circle cx="-16" cy="0" r="7" fill="var(--leaf)"/><circle r="6" fill="#fff" class="twinkle"/></g>
+            </g>
+            <!-- chevron band -->
+            <g fill="var(--magenta)">
+              <path d="M110 150l14 10 14-10v8l-14 10-14-10z"/><path d="M146 150l14 10 14-10v8l-14 10-14-10z"/><path d="M182 150l14 10 14-10v8l-14 10-14-10z"/>
+              <path d="M350 150l14 10 14-10v8l-14 10-14-10z"/><path d="M386 150l14 10 14-10v8l-14 10-14-10z"/><path d="M422 150l14 10 14-10v8l-14 10-14-10z"/>
+            </g>
+            <text x="280" y="62" text-anchor="middle" font-family="Noto Nastaliq Urdu, serif" font-size="22" fill="var(--sun)">منشی</text>
+            <text x="280" y="128" text-anchor="middle" class="bungee" font-size="58" fill="var(--sun)" stroke="var(--red)" stroke-width="6" paint-order="stroke" letter-spacing="2">MUNSHI</text>
+            <text x="280" y="196" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="30" fill="#fff">Aap boliye, munshi likhega.</text>
+          </svg>
+          <small style="color:rgba(255,255,255,.6)">LinkedIn launch banner · "You speak, munshi writes."</small>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:16px">
+        <div class="tile" style="background:#fff">
+          <svg width="150" height="150" viewBox="0 0 150 150" aria-label="truck-art sticker">
+            <circle cx="75" cy="75" r="70" fill="var(--magenta)"/>
+            <circle cx="75" cy="75" r="60" fill="none" stroke="var(--sun)" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>
+            <circle cx="75" cy="75" r="48" fill="var(--teal)"/>
+            <text x="75" y="70" text-anchor="middle" class="bungee" font-size="22" fill="var(--sun)">MUNSHI</text>
+            <text x="75" y="96" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="19" fill="#fff">likh diya.</text>
+          </svg>
+          <small>Laptop sticker · "written it."</small>
+        </div>
+        <div class="tile" style="background:var(--sun);box-shadow:none">
+          <div class="bungee" style="font-size:1.35rem;color:var(--red);text-align:center;line-height:1.25">TUESDAY'S CALL<br/><span style="color:var(--teal)">→</span> MONDAY'S POST</div>
+          <small style="color:rgba(27,42,65,.6)">Social post headline</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== H ===== -->
+    <section class="concept fun">
+      <div class="concept-head">
+        <div><span class="tag">Direction H · motion first</span><h2>Voice into ink</h2></div>
+      </div>
+      <div class="why">
+        <div><b>The idea</b>A sound wave that turns into one handwritten line and lands on an ink dot. Your voice, written down, in three seconds.</div>
+        <div><b>Why it spreads</b>Built for Reels and video end cards, where a logo has to move. The static frame still works as a mark.</div>
+        <div><b>Risk</b>Needs a motion designer to feel premium; the version here is a sketch of the timing.</div>
+      </div>
+      <div class="grid">
+        <div class="tile" style="color:var(--ink)">
+          <svg width="240" height="110" viewBox="0 0 240 110" aria-label="voice into ink animation">
+            <g class="wave" fill="var(--ink)">
+              <rect x="10" y="35" width="7" height="40" rx="3.5"/><rect x="24" y="25" width="7" height="60" rx="3.5"/><rect x="38" y="40" width="7" height="30" rx="3.5"/><rect x="52" y="20" width="7" height="70" rx="3.5"/><rect x="66" y="35" width="7" height="40" rx="3.5"/><rect x="80" y="45" width="7" height="20" rx="3.5"/>
+            </g>
+            <path class="ink-line" d="M96 62c12-22 22-22 26 0s14 18 22-6 18-26 24-2-2 20 12 10 16-24 26-14" fill="none" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="ink-dot" cx="214" cy="48" r="8" fill="var(--saffron)"/>
+          </svg>
+          <span class="caveat" style="font-size:1.7rem">your voice, in ink.</span>
+          <small>Animated mark</small>
+        </div>
+        <div class="tile" style="background:#eef1f6">
+          <div class="reel">
+            <svg width="130" height="60" viewBox="0 0 240 110">
+              <g class="wave" fill="var(--paper)">
+                <rect x="10" y="35" width="7" height="40" rx="3.5"/><rect x="24" y="25" width="7" height="60" rx="3.5"/><rect x="38" y="40" width="7" height="30" rx="3.5"/><rect x="52" y="20" width="7" height="70" rx="3.5"/><rect x="66" y="35" width="7" height="40" rx="3.5"/><rect x="80" y="45" width="7" height="20" rx="3.5"/>
+              </g>
+              <path class="ink-line" d="M96 62c12-22 22-22 26 0s14 18 22-6 18-26 24-2-2 20 12 10 16-24 26-14" fill="none" stroke="var(--paper)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle class="ink-dot" cx="214" cy="48" r="8" fill="var(--saffron)"/>
+            </svg>
+            <span class="word" style="font-size:1.5rem">munshi</span>
+            <span style="font-size:.7rem;opacity:.6">munshi.ai</span>
+          </div>
+          <small>Reel end card · 9:16</small>
+        </div>
+        <div class="tile" style="color:var(--ink)">
+          <svg width="96" height="96" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="var(--ink)"/><g fill="var(--paper)"><rect x="16" y="40" width="6" height="20" rx="3"/><rect x="27" y="32" width="6" height="36" rx="3"/><rect x="38" y="44" width="6" height="12" rx="3"/></g><path d="M50 56c6-12 11-12 13 0s8 10 12-4" fill="none" stroke="var(--paper)" stroke-width="5" stroke-linecap="round"/><circle cx="80" cy="46" r="6" fill="var(--saffron)"/></svg>
+          <small>Static app icon</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="notes" style="border-top-color:rgba(27,42,65,.12)">
+      <h3>Round 2 recommendation</h3>
+      <p><strong>A system, not a single pick:</strong> <strong>E (munshi is typing…)</strong> as the everyday logo and voice of the brand, <strong>G (truck art)</strong> as the launch and campaign layer, and <strong>H (voice into ink)</strong> as the motion signature on Reels and video. F, the ledger, is the best merch object if you want one physical thing at events.</p>
+      <p>E beats Round 1's A for marketing because it becomes a phrase people say ("let munshi handle it"), and G is the part only you can credibly own: a Pakistani founder in Tallinn bringing truck art to B2B LinkedIn is a story, not just a style.</p>
+    </div>
+  </section>
+
+
+  <!-- =================== ROUND 3 =================== -->
+  <section class="round3">
+    <span class="lens">Round 3 · speech nib × voice into ink</span>
+    <h2 class="round-title">Ten more directions.</h2>
+    <p style="color:#4b4f57;max-width:780px;line-height:1.65">The speech nib says "it hears, then writes" with a shape. Voice into ink says the same thing with motion. Three ways to merge them first, then each parent pushed further on its own: four funkier speech nibs, three funkier voice-into-ink marks. Each card shows the mark (animated where it should move) and the app icon.</p>
+
+    <h3 class="group-title">Merges: one mark that hears and writes</h3>
+    <p class="group-sub">Sound goes in, ink comes out.</p>
+    <div class="cards" id="g-merge"></div>
+
+    <h3 class="group-title">Funkier speech nibs</h3>
+    <p class="group-sub">The bubble-and-pen idea with more attitude.</p>
+    <div class="cards" id="g-nib"></div>
+
+    <h3 class="group-title">Funkier voice into ink</h3>
+    <p class="group-sub">The transformation idea, louder.</p>
+    <div class="cards" id="g-ink"></div>
+
+    <div class="notes" style="border-top-color:rgba(27,42,65,.12)">
+      <h3>Round 3 recommendation</h3>
+      <p><strong>I, the talking nib, is the merge that works.</strong> It keeps Direction A's shape, so it reads at 16 pixels, and adds H's motion: sound pulses inside the bubble and ink writes itself out of the nib. As a still it is a confident logo; as an animation it explains the product in under four seconds. That is the one to take to a designer.</p>
+      <p>Keep two supporting pieces: <strong>Q (greatest hits)</strong> for campaigns and merch, because "your best lines, on repeat" is a whole content series, and <strong>N (wink)</strong> as the mascot face in the app and on social. K, the one-line bubble, is the most elegant, but its thin stroke disappears at small sizes.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+/* Round 3 marks. Each takes a colour set, so the same drawing renders on
+   paper and as a dark app icon. Animated parts carry a-* classes; the app
+   icon renders inside .still so it stays a clean static frame. */
+const INK = "#1b2a41", PAPER = "#fbf6ec", SAF = "#f2a33a", NIGHT = "#0f1724",
+      MAG = "#e0287d", TEAL = "#0e8f8f", RED = "#d7263d";
+const light = { ink: INK, cut: "#ffffff", acc: SAF, bg: PAPER };
+const dark  = { ink: PAPER, cut: INK, acc: SAF, bg: INK };
+
+const nibTail = (c, x = 0) => `
+  <path d="M${26+x} 60h36l-4 12-14 28-14-28z" fill="${c.ink}"/>
+  <path d="M${44+x} 98V79" stroke="${c.cut}" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="${44+x}" cy="75" r="3.8" fill="${c.cut}"/>`;
+
+const MARKS = {
+  I: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <rect x="10" y="8" width="100" height="60" rx="18" fill="${c.ink}"/>
+      ${nibTail(c)}
+      <g fill="${c.cut}">
+        <rect class="a-bar" x="30" y="26" width="7" height="24" rx="3.5"/><rect class="a-bar" x="42" y="20" width="7" height="36" rx="3.5"/>
+        <rect class="a-bar" x="54" y="28" width="7" height="20" rx="3.5"/><rect class="a-bar" x="66" y="18" width="7" height="40" rx="3.5"/>
+        <rect class="a-bar" x="78" y="26" width="7" height="24" rx="3.5"/>
+      </g>
+      <path class="a-draw" style="--len:90;stroke-dasharray:90" d="M44 100c8 9 18 10 26 1s14-11 22-3" fill="none" stroke="${c.ink}" stroke-width="5" stroke-linecap="round"/>
+      <circle class="a-pop" cx="101" cy="96" r="6" fill="${c.acc}"/>
+    </svg>`,
+
+  J: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <g fill="${c.ink}">
+        <rect x="22" y="14" width="7" height="44" rx="3.5"/><rect x="32" y="14" width="7" height="56" rx="3.5"/>
+        <rect x="42" y="14" width="7" height="68" rx="3.5"/><rect x="52" y="14" width="7" height="82" rx="3.5"/>
+        <rect x="70" y="14" width="7" height="82" rx="3.5"/><rect x="80" y="14" width="7" height="68" rx="3.5"/>
+        <rect x="90" y="14" width="7" height="56" rx="3.5"/><rect x="100" y="14" width="7" height="44" rx="3.5"/>
+        <path d="M59 96l5.5 12 5.5-12z"/>
+      </g>
+      <circle cx="64.5" cy="42" r="6.5" fill="${c.acc}"/>
+      <rect x="62" y="52" width="5" height="40" rx="2.5" fill="${c.acc}" opacity=".35"/>
+    </svg>`,
+
+  K: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <path class="a-draw" style="--len:430;stroke-dasharray:430"
+        d="M40 104L34 74H28a16 16 0 0 1-16-16V30a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v28a16 16 0 0 1-16 16H52L40 104c8 4 16 2 22-6"
+        fill="none" stroke="${c.ink}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M30 36h44M30 50h28" stroke="${c.ink}" stroke-width="6" stroke-linecap="round"/>
+      <circle class="a-pop" cx="70" cy="94" r="6" fill="${c.acc}"/>
+    </svg>`,
+
+  L: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <rect x="36" y="6" width="48" height="58" rx="24" fill="${c.ink}"/>
+      <g fill="${c.cut}" opacity=".9">
+        <circle cx="50" cy="22" r="3"/><circle cx="60" cy="22" r="3"/><circle cx="70" cy="22" r="3"/>
+        <circle cx="45" cy="32" r="3"/><circle cx="55" cy="32" r="3"/><circle cx="65" cy="32" r="3"/><circle cx="75" cy="32" r="3"/>
+        <circle cx="50" cy="42" r="3"/><circle cx="60" cy="42" r="3"/><circle cx="70" cy="42" r="3"/>
+      </g>
+      <circle cx="60" cy="32" r="3" fill="${c.acc}"/>
+      <path d="M42 62h36l-4 10-14 38-14-38z" fill="${c.ink}"/>
+      <path d="M60 106V82" stroke="${c.cut}" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="78" r="4" fill="${c.acc}"/>
+    </svg>`,
+
+  M: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <rect x="8" y="8" width="52" height="34" rx="12" fill="${TEAL}"/>
+      <rect x="40" y="18" width="62" height="40" rx="14" fill="${MAG}"/>
+      <rect x="18" y="34" width="90" height="50" rx="16" fill="${c.ink}"/>
+      <path d="M34 78h30l-4 10-11 24-11-24z" fill="${c.ink}"/>
+      <path d="M49 108V90" stroke="${c.cut}" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="49" cy="86" r="3.6" fill="${c.cut}"/>
+      <rect x="32" y="50" width="48" height="7" rx="3.5" fill="${c.cut}"/>
+      <rect x="32" y="63" width="30" height="7" rx="3.5" fill="${c.cut}"/>
+      <circle cx="74" cy="66.5" r="5" fill="${c.acc}"/>
+    </svg>`,
+
+  N: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <rect x="10" y="8" width="100" height="62" rx="20" fill="${c.ink}"/>
+      ${nibTail(c)}
+      <circle cx="42" cy="34" r="6.5" fill="${c.cut}"/>
+      <path class="a-wink" d="M70 35q8-8 16 0" fill="none" stroke="${c.cut}" stroke-width="5" stroke-linecap="round"/>
+      <path d="M44 50q16 12 34 0" fill="none" stroke="${c.cut}" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="92" cy="50" r="5" fill="${c.acc}" opacity=".9"/>
+    </svg>`,
+
+  O: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <path d="M34 26a20 20 0 1 1 6 39c-2 12-10 22-22 28 6-9 9-17 9-26a20 20 0 0 1 7-41z" fill="${c.ink}"/>
+      <path d="M80 26a20 20 0 1 1 6 39c-2 12-10 22-22 28 6-9 9-17 9-26a20 20 0 0 1 7-41z" fill="${c.acc}"/>
+      <path d="M36 46v24M82 46v24" stroke="${c.cut}" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="36" cy="44" r="4" fill="${c.cut}"/>
+      <circle cx="82" cy="44" r="4" fill="${c.cut}"/>
+    </svg>`,
+
+  P: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <rect x="10" y="12" width="100" height="10" rx="5" fill="${c.ink}"/>
+      <g fill="${c.ink}">
+        <rect x="16" y="16" width="9" height="34" rx="4.5"/><rect x="30" y="16" width="9" height="56" rx="4.5"/>
+        <rect x="44" y="16" width="9" height="26" rx="4.5"/><rect x="58" y="16" width="9" height="66" rx="4.5"/>
+        <rect x="72" y="16" width="9" height="40" rx="4.5"/><rect x="86" y="16" width="9" height="52" rx="4.5"/>
+      </g>
+      <circle class="a-drip" cx="34.5" cy="80" r="4.5" fill="${c.ink}"/>
+      <circle class="a-drip" cx="62.5" cy="90" r="5" fill="${c.acc}" style="animation-delay:.7s"/>
+      <circle class="a-drip" cx="90.5" cy="76" r="4" fill="${c.ink}" style="animation-delay:1.3s"/>
+    </svg>`,
+
+  Q: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <g class="a-spin">
+        <circle cx="60" cy="60" r="52" fill="${c.ink === PAPER ? '#24324a' : INK}"/>
+        <g fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="1.6">
+          <circle cx="60" cy="60" r="46"/><circle cx="60" cy="60" r="40"/><circle cx="60" cy="60" r="34"/><circle cx="60" cy="60" r="28"/>
+        </g>
+        <path d="M60 14a46 46 0 0 1 40 23" fill="none" stroke="${c.acc}" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="60" cy="60" r="20" fill="${c.acc}"/>
+        <path d="M53 50h14l-2 5-5 13-5-13z" fill="${INK}"/>
+        <circle cx="60" cy="60" r="2.2" fill="${c.acc}"/>
+      </g>
+    </svg>`,
+
+  R: c => `<svg viewBox="0 0 120 120" width="100%" height="100%">
+      <g fill="none" stroke="${c.acc}" stroke-width="5" stroke-linecap="round" style="transform-origin:70px 76px">
+        <path class="a-ring" d="M82 66a16 16 0 0 1 0 22" style="transform-origin:70px 76px"/>
+        <path class="a-ring" d="M90 58a28 28 0 0 1 0 38" style="transform-origin:70px 76px"/>
+        <path class="a-ring" d="M98 50a40 40 0 0 1 0 54" style="transform-origin:70px 76px"/>
+      </g>
+      <g transform="rotate(-45 46 50)">
+        <path d="M28 10h36v34l-18 40-18-40z" fill="${c.ink}"/>
+        <path d="M46 82V54" stroke="${c.cut}" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="46" cy="50" r="4.5" fill="${c.cut}"/>
+      </g>
+    </svg>`,
+};
+
+const CARDS = {
+  "g-merge": [
+    { id: "I", name: "Talking nib", tag: "Merge", pick: true,
+      idea: "Sound pulses inside the bubble; ink writes itself out of the nib and lands on the saffron dot.",
+      verdict: "<b>The one.</b> Reads at 16 px as a still, explains the product in four seconds as motion." },
+    { id: "J", name: "Nib made of sound", tag: "Merge",
+      idea: "Waveform bars, tallest in the middle, form the nib's silhouette, with the saffron breather hole.",
+      verdict: "Very ownable and striking large; loses the speech-bubble meaning, so it needs the name beside it." },
+    { id: "K", name: "One-line bubble", tag: "Merge",
+      idea: "Bubble and nib drawn as a single handwritten stroke that keeps going and ends on an ink dot.",
+      verdict: "The most elegant. The thin stroke vanishes at small sizes, so better as a wordmark partner." },
+  ],
+  "g-nib": [
+    { id: "L", name: "Nib mic", tag: "Speech nib",
+      idea: "A microphone head on a pen body: the pen that listens. The saffron dot sits in the grille.",
+      verdict: "Instantly clear for meetings and voice. Mics are a crowded icon in podcast tools." },
+    { id: "M", name: "Chorus", tag: "Speech nib",
+      idea: "Teal and magenta bubbles behind one ink bubble with a nib: meetings, Slack and calls become one post.",
+      verdict: "Tells the integrations story best. Busy at favicon size; strong as a hero illustration." },
+    { id: "N", name: "Wink", tag: "Speech nib",
+      idea: "The speech nib with a face: one eye, one wink (it blinks), and the transcript line becomes a smile.",
+      verdict: "Instant personality. Great as the mascot face; a bit playful for the main B2B logo." },
+    { id: "O", name: "Quote nibs", tag: "Speech nib",
+      idea: "Two quotation marks shaped as ink drops with nib slits. The product turns what you said into something quotable.",
+      verdict: "Smart and typographic. Quote marks are common in content brands, so it needs the nib detail to stay ours." },
+  ],
+  "g-ink": [
+    { id: "P", name: "Ink-drip wave", tag: "Voice into ink",
+      idea: "Waveform bars hanging like wet paint, with drops that fall. Raw, street, poster-ready.",
+      verdict: "Best for merch and posters. Too grungy for the app icon." },
+    { id: "Q", name: "Greatest hits", tag: "Voice into ink",
+      idea: "A spinning record whose grooves are your voice, with a saffron label and a nib. Your best lines, on repeat.",
+      verdict: "A whole campaign: \"your greatest hits this month\". Retro charm; a supporting mark, not the core logo." },
+    { id: "R", name: "Broadcast nib", tag: "Voice into ink",
+      idea: "A writing nib whose tip sends out sound rings: your voice, written, then sent out on LinkedIn.",
+      verdict: "Captures distribution, not just writing. Rings read as Wi-Fi at small sizes." },
+  ],
+};
+
+for (const [gid, list] of Object.entries(CARDS)) {
+  const host = document.getElementById(gid);
+  host.innerHTML = list.map(c => `
+    <article class="card${c.pick ? " top" : ""}">
+      <div class="card-head"><h4>${c.id} · ${c.name}</h4>${c.pick ? '<span class="pick">PICK</span>' : `<span>${c.tag}</span>`}</div>
+      <div class="stage">
+        <div class="lt"><div style="width:150px;height:150px">${MARKS[c.id](light)}</div></div>
+        <div class="dk"><div class="app still" style="background:${INK}"><div style="width:62px;height:62px">${MARKS[c.id](dark)}</div></div></div>
+      </div>
+      <p>${c.idea}</p>
+      <p class="verdict">${c.verdict}</p>
+    </article>`).join("");
+}
+</script>
+</body>
+</html>

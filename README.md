@@ -1,21 +1,34 @@
 # AI CMO Logo Concept: tellme
 
-Logo concept for the AI CMO product, working name **tellme**. One friendly
-character, **Penpal**, is the master brand and holds a different prop for each
-channel (LinkedIn, Instagram, YouTube, podcast, newsletter). **Sidekick** is the
-human counterpart for people moments.
+Every logo and name exploration for the AI CMO product, from the first Munshi
+marks to the final **tellme** characters, plus the finished static brand kit.
+
+## Final pick
+
+**tellme**, with **Penpal** as the master brand: a round, friendly character that
+holds a different prop for each channel (pen for LinkedIn, camera for Instagram,
+play button for YouTube, mic for podcast, envelope for newsletter). **Sidekick** is
+the human counterpart for people moments.
 
 ## What's here
 
 | Folder | What it is |
 |---|---|
-| `brand-kit/` | Static logo files ready to use: SVG and PNG marks, 800 px profile pictures per channel, app icon, favicons, and "tellme" lockups. Open `brand-kit/index.html` for a preview with download links; `brand-kit/README.md` says which file goes where. |
-| `design-philosophy/` | The "funky design philosophy" behind the concept: palette, face recipe, shape rules, motion, and what made earlier rounds feel dystopian. `design-philosophy/reference/` has the animated versions (open in a browser). |
+| `brand-kit/` | Final static files ready to use: SVG and PNG marks, 800 px profile pictures per channel, app icon, favicons, "tellme" lockups. Open `brand-kit/index.html` for a preview with download links. |
+| `explorations/` | All the rounds, as pages you open in a browser (start at `index.html`). |
 
-## Rebuilding
+### Explorations, in order
 
-The scripts in `brand-kit/_source/` regenerate the kit: `generate-marks.mjs`
-(needs `sharp`) and `render-lockups.mjs` (uses Google Chrome). Their output path
-is set at the top of each script.
+| Page | Round |
+|---|---|
+| `index.html` | Munshi logo marks, rounds 1 to 3 (start here; links to the rest) |
+| `names.html` | 30 name options |
+| `dastaan.html` | Dastaan direction |
+| `voice-ink.html` | "Voice into ink" in English: tellsy, tellby, talkpen |
+| `voice-ink-estonian.html` | Estonian-name version (rejected) |
+| `nibmic.html` | Nib + mic + human marks |
+| `tellme.html` | First tellme characters (felt too serious / dystopian) |
+| `tellme-friendly.html` | Five friendly characters: Bubble buddy, Notepad pal, Penpal, Sidekick, Letter face |
+| `tellme-system.html` | Penpal and Sidekick across every channel (final) |
 
 Status: concept. The name and marks have not been trademark-checked.
